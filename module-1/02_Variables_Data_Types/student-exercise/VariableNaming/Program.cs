@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 
 namespace VariableNaming
 {
@@ -32,192 +35,305 @@ namespace VariableNaming
             3. 3 raccoons are playing in the woods. 2 go home to eat dinner. How
             many raccoons are left in the woods?
             */
-
+            int raccoonPlay = 3;
+            int raccoonHome = 2;
+            int raccoonRemain = raccoonPlay - raccoonHome;
+            Console.WriteLine(raccoonRemain);
             /*
             4. There are 5 flowers and 3 bees. How many less bees than flowers?
             */
-
+            int flower = 5;
+            int bee = 3;
+            int diffFlower = flower - bee;
+            Console.WriteLine(diffFlower);
             /*
             5. 1 lonely pigeon was eating breadcrumbs. Another pigeon came to eat
             breadcrumbs, too. How many pigeons are eating breadcrumbs now?
             */
-
+            int eatingPigeon = 1;
+            int newPigeon = 1;
+            int totalPigeon = eatingPigeon + newPigeon;
+            Console.WriteLine(totalPigeon);
             /*
             6. 3 owls were sitting on the fence. 2 more owls joined them. How many
             owls are on the fence now?
             */
-
+            int fenceOwl = 3;
+            int newOwl = 2;
+            int totalOwl = fenceOwl + newOwl;
+            Console.WriteLine(totalOwl);
             /*
             7. 2 beavers were working on their home. 1 went for a swim. How many
             beavers are still working on their home?
             */
-
+            int workBeaver = 2;
+            int swimBeaver = 1;
+            workBeaver -= swimBeaver;
+            Console.WriteLine(workBeaver);
             /*
             8. 2 toucans are sitting on a tree limb. 1 more toucan joins them. How
             many toucans in all?
             */
-
+            int sittingToucan = 2;
+            int newToucan = 1;
+            sittingToucan += newToucan;
+            Console.WriteLine(sittingToucan);
             /*
             9. There are 4 squirrels in a tree with 2 nuts. How many more squirrels
             are there than nuts?
             */
-
+            int squirrel = 4;
+            int nut = 2;
+            int diffSquirrel = squirrel - nut;
+            Console.WriteLine(diffSquirrel);
             /*
             10. Mrs. Hilt found a quarter, 1 dime, and 2 nickels. How much money did
             she find?
             */
-
+            decimal quarter = 0.25M;
+            decimal dime = 0.10M;
+            decimal nickel = 0.05M;
+            decimal hiltMoney = quarter + dime + (2 * nickel);
+            Console.WriteLine(hiltMoney);
             /*
             11. Mrs. Hilt's favorite first grade classes are baking muffins. Mrs. Brier's
             class bakes 18 muffins, Mrs. MacAdams's class bakes 20 muffins, and
             Mrs. Flannery's class bakes 17 muffins. How many muffins does first
             grade bake in all?
             */
-
+            int brierMuffin = 18;
+            int macAdamsMuffin = 20;
+            int flanneryMuffin = 17;
+            int gradeMuffin = brierMuffin + macAdamsMuffin + flanneryMuffin;
+            Console.WriteLine(gradeMuffin);
             /*
             12. Mrs. Hilt bought a yoyo for 24 cents and a whistle for 14 cents. How
             much did she spend in all for the two toys?
             */
-
+            decimal yoyo = .24M;
+            decimal whistle = .14M;
+            decimal hiltMoneySpent = yoyo + whistle;
+            Console.WriteLine(hiltMoneySpent);
             /*
             13. Mrs. Hilt made 5 Rice Krispie Treats. She used 8 large marshmallows
             and 10 mini marshmallows.How many marshmallows did she use
             altogether?
             */
-
+            int largeMarsh = 8;
+            int miniMarsh = 10;
+            int totalMarsh = largeMarsh + miniMarsh;
+            Console.WriteLine(totalMarsh);
             /*
             14. At Mrs. Hilt's house, there was 29 inches of snow, and Brecknock
             Elementary School received 17 inches of snow. How much more snow
             did Mrs. Hilt's house have?
             */
-
+            int hiltSnow = 29;
+            int brecknockSnow = 17;
+            int diffSnow = hiltSnow - brecknockSnow;
+            Console.WriteLine(diffSnow);
             /*
             15. Mrs. Hilt has $10. She spends $3 on a toy truck and $2 on a pencil
             case. How much money does she have left?
             */
-
+            decimal hiltMoneypouch = 10.00M;
+            decimal truckCost = 3.00M;
+            decimal pencilCaseCost = 2.00M;
+            hiltMoneypouch -= truckCost + pencilCaseCost;
+            Console.WriteLine(hiltMoneypouch);
             /*
             16. Josh had 16 marbles in his collection. He lost 7 marbles. How many
             marbles does he have now?
             */
-
+            int marbleCollection = 16;
+            int lostMarble = 7;
+            marbleCollection -= lostMarble;
+            Console.WriteLine(marbleCollection);
             /*
             17. Megan has 19 seashells. How many more seashells does she need to
             find to have 25 seashells in her collection?
             */
-
+            int meganSeashell = 19;
+            int meganSeashellDesire = 25;
+            int meganSeashellLeftToCollect = meganSeashellDesire - meganSeashell;
+            Console.WriteLine(meganSeashellLeftToCollect);
             /*
             18. Brad has 17 balloons. 8 balloons are red and the rest are green. How
             many green balloons does Brad have?
             */
-
+            int balloonTotal = 17;
+            int balloonRed = 8;
+            int balloonGreen = balloonTotal - balloonRed;
+            Console.WriteLine(balloonGreen);
             /*
             19. There are 38 books on the shelf. Marta put 10 more books on the shelf.
             How many books are on the shelf now?
             */
-
+            int bookshelf = 38;
+            int bookAdd = 10;
+            bookshelf += bookAdd;
+            Console.WriteLine(bookshelf);
             /*
             20. A bee has 6 legs. How many legs do 8 bees have?
             */
-
+            const int beeLeg = 6;
+            int beeCount = 8;
+            int beeLegTotal = beeLeg * beeCount;
+            Console.WriteLine(beeLegTotal);
             /*
             21. Mrs. Hilt bought an ice cream cone for 99 cents. How much would 2 ice
             cream cones cost?
             */
-
+            decimal coneCost = .99M;
+            decimal twoConeCost = coneCost * 2;
+            Console.WriteLine(twoConeCost);
             /*
             22. Mrs. Hilt wants to make a border around her garden. She needs 125
             rocks to complete the border. She has 64 rocks. How many more rocks
             does she need to complete the border?
             */
-
+            int rockwallCount = 64;
+            int rockwallTotal = 125;
+            int rockwallRemaining = rockwallTotal - rockwallCount;
+            Console.WriteLine(rockwallRemaining);
             /*
             23. Mrs. Hilt had 38 marbles. She lost 15 of them. How many marbles does
             she have left?
             */
-
+            int hiltMarbleCount = 38;
+            int hiltLostMarble = 15;
+            hiltMarbleCount -= hiltLostMarble;
+            Console.WriteLine(hiltMarbleCount);
             /*
             24. Mrs. Hilt and her sister drove to a concert 78 miles away. They drove 32
             miles and then stopped for gas. How many miles did they have left to drive?
             */
-
+            int hiltDriveTotalDistance = 78;
+            int hiltDrive = 32;
+            int hiltDriveRemaining = hiltDriveTotalDistance - hiltDrive;
+            Console.WriteLine(hiltDriveRemaining);
             /*
             25. Mrs. Hilt spent 1 hour and 30 minutes shoveling snow on Saturday
             morning and 45 minutes shoveling snow on Saturday afternoon. How
             much total time did she spend shoveling snow?
             */
-
+            double hiltShovelSatMorn = 1.5;
+            double hiltShovelSatAfternoon = 0.75;
+            double hiltShovelSatTotal = hiltShovelSatMorn + hiltShovelSatAfternoon;
+            Console.WriteLine(hiltShovelSatTotal);
             /*
             26. Mrs. Hilt bought 6 hot dogs. Each hot dog cost 50 cents. How much
             money did she pay for all of the hot dogs?
             */
-
+            int hiltHotDogCount = 6;
+            decimal hotDogCost = .50M;
+            decimal hiltHotDogCostTotal = hotDogCost * hiltHotDogCount;
+            Console.WriteLine(hiltHotDogCostTotal);
             /*
             27. Mrs. Hilt has 50 cents. A pencil costs 7 cents. How many pencils can
             she buy with the money she has?
             */
-
+            decimal pencilCost = 0.07M;
+            decimal hiltPencilMoney = 0.5M;
+            int hiltTotalPencil = (int)(hiltPencilMoney / pencilCost);
+            Console.WriteLine(hiltTotalPencil);
             /*
             28. Mrs. Hilt saw 33 butterflies. Some of the butterflies were red and others
             were orange. If 20 of the butterflies were orange, how many of them
             were red?
             */
-
+            int butterfliesSeen = 33;
+            int butterflyOrange = 20;
+            int butterflyRed = butterfliesSeen - butterflyOrange;
+            Console.WriteLine(butterflyRed);
             /*
             29. Kate gave the clerk $1.00. Her candy cost 54 cents. How much change
             should Kate get back?
             */
-
+            decimal kateMoney = 1M;
+            decimal candyCost = .54M;
+            decimal kateChange = kateMoney - candyCost;
+            Console.WriteLine(kateChange);
             /*
             30. Mark has 13 trees in his backyard. If he plants 12 more, how many trees
             will he have?
             */
-
+            int markTrees = 13;
+            int plantTrees = 12;
+            markTrees += plantTrees;
+            Console.WriteLine(markTrees);
             /*
             31. Joy will see her grandma in two days. How many hours until she sees
             her?
             */
-
+            int hoursInDay = 24;
+            int joyWaitTimeDays = 2;
+            int joyWaitTimeHours = joyWaitTimeDays * hoursInDay;
+            Console.WriteLine(joyWaitTimeHours);
             /*
             32. Kim has 4 cousins. She wants to give each one 5 pieces of gum. How
             much gum will she need?
             */
-
+            int kimsCousinCount = 4;
+            int gumPerCousin = 5;
+            int kimGumCount = kimsCousinCount * gumPerCousin;
+            Console.WriteLine(kimGumCount);
             /*
             33. Dan has $3.00. He bought a candy bar for $1.00. How much money is
             left?
             */
-
+            decimal danTotalMoney = 3.00M;
+            decimal candybarCost = 1.00M;
+            danTotalMoney -= candybarCost;
+            Console.WriteLine(danTotalMoney);
             /*
             34. 5 boats are in the lake. Each boat has 3 people. How many people are
             on boats in the lake?
             */
-
+            int boatsOnLake = 5;
+            int peopleInBoat = 3;
+            int peopleOnLake = boatsOnLake * peopleInBoat;
+            Console.WriteLine(peopleOnLake);
             /*
             35. Ellen had 380 legos, but she lost 57 of them. How many legos does she
             have now?
             */
-
+            int ellenLegoCount = 380;
+            int ellenLegoLost = 57;
+            ellenLegoCount -= ellenLegoLost;
+            Console.WriteLine(ellenLegoCount);
             /*
             36. Arthur baked 35 muffins. How many more muffins does Arthur have to
             bake to have 83 muffins?
             */
-
+            int muffinTotal = 83;
+            int arthurMuffin = 35;
+            int muffinDiff = muffinTotal - arthurMuffin;
+            Console.WriteLine(muffinDiff);
             /*
             37. Willy has 1400 crayons. Lucy has 290 crayons. How many more
             crayons does Willy have then Lucy?
             */
-
+            int crayonWilly = 1400;
+            int crayonLucy = 290;
+            int crayonDiff = crayonWilly - crayonLucy;
+            Console.WriteLine(crayonDiff);
             /*
             38. There are 10 stickers on a page. If you have 22 pages of stickers, how
             many stickers do you have?
             */
-
+            int stickersOnPage = 10;
+            int stickerPageTotal = 22;
+            int stickerTotal = stickersOnPage * stickerPageTotal;
+            Console.WriteLine(stickerTotal);
             /*
             39. There are 96 cupcakes for 8 children to share. How much will each
             person get if they share the cupcakes equally?
             */
-
+            int cupcakeTotal = 96;
+            int childrenCupcake = 8;
+            int cupcakePerChild = cupcakeTotal / childrenCupcake;
+            Console.WriteLine(cupcakePerChild);
             /*
             40. She made 47 gingerbread cookies which she will distribute equally in
             tiny glass jars. If each jar is to contain six cookies each, how many
