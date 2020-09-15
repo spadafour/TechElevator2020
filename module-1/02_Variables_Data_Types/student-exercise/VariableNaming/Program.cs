@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 
@@ -339,48 +340,98 @@ namespace VariableNaming
             tiny glass jars. If each jar is to contain six cookies each, how many
             cookies will not be placed in a jar?
             */
-
+            int gingerbreadMade = 47;
+            int gingerbreadPerJar = 6;
+            int gingerbreadRemain = gingerbreadMade % gingerbreadPerJar;
+            Console.WriteLine(gingerbreadRemain);
             /*
             41. She also prepared 59 croissants which she plans to give to her 8
             neighbors. If each neighbor received and equal number of croissants,
             how many will be left with Marian?
             */
-
+            int croissantsMade = 59;
+            int neighbors = 8;
+            int croissantsRemain = croissantsMade % neighbors;
+            Console.WriteLine(croissantsRemain);
             /*
             42. Marian also baked oatmeal cookies for her classmates. If she can
             place 12 cookies on a tray at a time, how many trays will she need to
             prepare 276 oatmeal cookies at a time?
             */
-
+            int oatCookiePerTray = 12;
+            int oatCookiesMade = 276;
+            int cookieTrayTotal = oatCookiesMade / oatCookiePerTray;
+            Console.WriteLine(cookieTrayTotal);
             /*
             43. Marian’s friends were coming over that afternoon so she made 480
             bite-sized pretzels. If one serving is equal to 12 pretzels, how many
             servings of bite-sized pretzels was Marian able to prepare?
             */
-
+            int pretzelsMade = 480;
+            int pretzelsServing = 12;
+            int pretzelsServingTotal = pretzelsMade / pretzelsServing;
+            Console.WriteLine(pretzelsServingTotal);
             /*
             44. Lastly, she baked 53 lemon cupcakes for the children living in the city
             orphanage. If two lemon cupcakes were left at home, how many
             boxes with 3 lemon cupcakes each were given away?
             */
-
+            int cupcakesMade = 53;
+            int cupcakesAtHome = 2;
+            int cupcakesBrought = cupcakesMade - cupcakesAtHome;
+            int cupcakesPerBox = 3;
+            int boxesGivenAway = cupcakesBrought / cupcakesPerBox;
+            Console.WriteLine(boxesGivenAway);
             /*
             45. Susie's mom prepared 74 carrot sticks for breakfast. If the carrots
             were served equally to 12 people, how many carrot sticks were left
             uneaten?
             */
-
+            int carrotsSticksMade = 74;
+            int carrotSticksEaters = 12;
+            int carrotSticksRemain = carrotsSticksMade % carrotSticksEaters;
+            Console.WriteLine(carrotSticksRemain);
             /*
             46. Susie and her sister gathered all 98 of their teddy bears and placed
             them on the shelves in their bedroom. If every shelf can carry a
             maximum of 7 teddy bears, how many shelves will be filled?
             */
+            int teddyTotal = 98;
+            int shelfCapacity = 7;
+            int shelfTotal = teddyTotal / shelfCapacity;
+            /*
+            Check to see if there are a remainder of bears that would require an extra shelf:
+            int shelfSpillover = teddyTotal % shelfCapacity;
+            Console.WriteLine(shelfSpillover);
+            */
+            /* If remainder is 0: */
+            Console.WriteLine(shelfTotal);
+            /*
+            Else:
+            Console.WriteLine(shelfTotal + 1);
+            */
+
 
             /*
             47. Susie’s mother collected all family pictures and wanted to place all of
             them in an album. If an album can contain 20 pictures, how many
             albums will she need if there are 480 pictures?
             */
+            int picPerAlbum = 20;
+            int totalPic = 480;
+            int albumTotal = totalPic / picPerAlbum;
+            /*
+            Check to see if there are a remainder of pictures that would require an extra album:
+            int photoSpillover = totalPic % picPerAlbum;
+            Console.WriteLine(photoSpillover);
+            */
+            /* If remainder is 0: */
+            Console.WriteLine(albumTotal);
+            /*
+            Else:
+            Console.WriteLine(albumTotal + 1);
+            */
+
 
             /*
             48. Joe, Susie’s brother, collected all 94 trading cards scattered in his
@@ -388,17 +439,33 @@ namespace VariableNaming
             cards, how many boxes were filled and how many cards are there in
             the unfilled box?
             */
+            int tradingCards = 94;
+            int cardsPerBox = 8;
+            int cardBoxTotal = tradingCards / cardsPerBox;
+            /* Number of filled card boxes: */
+            Console.WriteLine(cardBoxTotal);
+            /* Number of leftover cards: */
+            int cardRemainder = tradingCards % cardsPerBox;
+            Console.WriteLine(cardRemainder);
 
             /*
             49. Susie’s father repaired the bookshelves in the reading room. If he has
             210 books to be distributed equally on the 10 shelves he repaired,
             how many books will each shelf contain?
             */
+            int dadBookCount = 210;
+            int shelfCount = 10;
+            int dadBooksPerShelf = dadBookCount / shelfCount;
+            Console.WriteLine(dadBooksPerShelf);
 
             /*
             50. Cristina baked 17 croissants. If she planned to serve this equally to
             her seven guests, how many will each have?
             */
+            int cristinaCroissants = 17;
+            int cristinaGuests = 7;
+            int croissantPerGuest = cristinaCroissants / cristinaGuests;
+            Console.WriteLine(croissantPerGuest);
 
             /*
                 CHALLENGE PROBLEMS
@@ -410,6 +477,16 @@ namespace VariableNaming
             Hint: Calculate the hourly rate for each painter, combine them, and then divide the total walls in feet by the combined hourly rate of the painters.
             Challenge: How many days will it take the pair to paint 623 rooms assuming they work 8 hours a day?.
             */
+            float billPaintTime = 2.15F;
+            float jillPaintTime = 1.9F;
+            float avgTimeTogetherPerRoom = (billPaintTime + jillPaintTime) / 4;
+            float paintTimeFiveRooms = avgTimeTogetherPerRoom * 5;
+            Console.WriteLine(paintTimeFiveRooms);
+
+            /* Challenge */
+            int workDay = 8;
+            float paintTime623Rooms = (avgTimeTogetherPerRoom * 623)/workDay;
+            Console.WriteLine(paintTime623Rooms);
 
             /*
             Create and assign variables to hold your first name, last name, and middle initial. Using concatenation,
@@ -418,6 +495,12 @@ namespace VariableNaming
             with a period.
             Example: "Hopper, Grace B."
             */
+            string firstName = "Rob";
+            string lastName = "Spadafore";
+            string middleInit = "A";
+            string fullName = lastName + ", " + firstName + " " + middleInit + ".";
+            Console.WriteLine(fullName);
+
 
             /*
             The distance between New York and Chicago is 800 miles, and the train has already travelled 537 miles.
@@ -425,7 +508,10 @@ namespace VariableNaming
             Hint: The percent completed is the miles already travelled divided by the total miles.
             Challenge: Display as an integer value between 0 and 100 using casts.
             */
-
+            int totalDistance = 800;
+            int travelDistance = 537;
+            int percentTripComplete = (int)((((float)(travelDistance)) / ((float)(totalDistance))) * 100);
+            Console.WriteLine(percentTripComplete);
         }
     }
 }
