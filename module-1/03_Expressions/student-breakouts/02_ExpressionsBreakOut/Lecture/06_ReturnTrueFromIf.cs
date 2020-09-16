@@ -17,7 +17,7 @@ namespace Lecture
         {
             if (true)
             {
-                
+                return true;
             }
 
             return false;
