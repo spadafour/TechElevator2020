@@ -18,6 +18,17 @@ namespace Exercises
         */
         public bool SquirrelPlay(int temp, bool isSummer)
         {
+            if (isSummer)
+            {
+                if (temp>59 && temp<101)
+                {
+                    return true;
+                }
+                return false;
+            } else if (temp>59 && temp<91)
+            {
+                return true;
+            }
             return false;
         }
 

@@ -17,6 +17,18 @@ namespace Exercises
       */
         public int Max1020(int a, int b)
         {
+            if ((a > 9 && a < 21) && (b > 9 && b < 21))
+            {
+                return (a >= b) ? a : b;
+            }
+            else if ((a > 9 && a < 21) && !(b > 9 && b < 21))
+            {
+                return a;
+            }
+            else if (!(a > 9 && a < 21) && (b > 9 && b < 21))
+            {
+                return b;
+            }
             return 0;
         }
 
