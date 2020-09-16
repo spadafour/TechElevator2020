@@ -474,19 +474,24 @@ namespace VariableNaming
             /*
             Bill and Jill are house painters. Bill can paint a 12 x 14 room in 2.15 hours, while Jill averages
             1.90 hours. How long will it take the two painter working together to paint 5 12 x 14 rooms?
-            Hint: Calculate the hourly rate for each painter, combine them, and then divide the total walls in feet by the combined hourly rate of the painters.
+            Hint: Calculate the hourly rate for each painter, combine  them, and then divide the total walls in feet by the combined hourly rate of the painters.
             Challenge: How many days will it take the pair to paint 623 rooms assuming they work 8 hours a day?.
             */
             float billPaintTime = 2.15F;
             float jillPaintTime = 1.9F;
-            float avgTimeTogetherPerRoom = (billPaintTime + jillPaintTime) / 4;
-            float paintTimeFiveRooms = avgTimeTogetherPerRoom * 5;
+            float billPaintHourRate = 1 / billPaintTime;
+            float jillPaintHourRate = 1 / jillPaintTime;
+            float totalPaintHourRate = billPaintHourRate + jillPaintHourRate;
+            float paintTimeFiveRooms =  5 / totalPaintHourRate;
             Console.WriteLine(paintTimeFiveRooms);
+
+
 
             /* Challenge */
             int workDay = 8;
-            float paintTime623Rooms = (avgTimeTogetherPerRoom * 623)/workDay;
-            Console.WriteLine(paintTime623Rooms);
+            float paintTime623Rooms = 623 / totalPaintHourRate;
+            float workDays623Rooms = paintTime623Rooms / workDay;
+            Console.WriteLine(workDays623Rooms);
 
             /*
             Create and assign variables to hold your first name, last name, and middle initial. Using concatenation,
