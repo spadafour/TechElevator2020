@@ -20,7 +20,19 @@ namespace Exercises
          */
         public int LuckySum(int a, int b, int c)
         {
-            return 0;
+            if (a == 13)
+            {
+                if (b == 13)
+                {
+                    return 0;
+                }
+                return c == 13 ? 0 : c;
+            }
+            else if (b == 13)
+            {
+                return a == 13 ? 0 : a; 
+            }
+            return c == 13 ? a+b : a+b+c;
         }
     }
 }

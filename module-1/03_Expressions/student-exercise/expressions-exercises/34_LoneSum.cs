@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,7 +18,19 @@ namespace Exercises
          */
         public int LoneSum(int a, int b, int c)
         {
-            return 0;
+            if (a == b)
+            {
+                return b == c ? 0 : c;
+            }
+            else if (b == c)
+            {
+                return a;
+            }
+            else if (a == c)
+            {
+                return b;
+            }
+            return a + b + c;
         }
 
     }

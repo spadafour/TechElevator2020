@@ -19,6 +19,16 @@ namespace Exercises
          */
         public bool InOrderEqual(int a, int b, int c, bool equalOk)
         {
+            int diffBA = b - a;
+            int diffCB = c - b;
+            if (equalOk && diffBA>=0 && diffCB>=0)
+            {
+                return true;
+            }
+            else if (diffBA>0 && diffCB>0)
+            {
+                return true;
+            }
             return false;
         }
 
