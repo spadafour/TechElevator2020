@@ -19,7 +19,7 @@ namespace Exercises
         public bool NearTen(int num)
         {
             int numMod = num % 10;
-            if (numMod>=0 && numMod<=2 || numMod==8 || numMod==9)
+            if (numMod<=2 || numMod==8 || numMod==9)
             {
                 return true;
             }
