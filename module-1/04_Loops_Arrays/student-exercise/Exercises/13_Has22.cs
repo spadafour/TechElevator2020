@@ -16,6 +16,16 @@ namespace Exercises
          */
         public bool Has22(int[] nums)
         {
+            bool twoNextTo = false;
+            int holder = nums[0];
+            for (int i=1; i<nums.Length; i++)
+            {
+                if (nums[i]==2 && nums[i]==holder)
+                {
+                    twoNextTo = true;
+                }
+                holder = nums[i];
+            }
             return false;
         }
 

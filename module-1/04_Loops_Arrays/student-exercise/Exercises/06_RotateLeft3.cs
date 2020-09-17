@@ -17,7 +17,16 @@ namespace Exercises
          */
         public int[] RotateLeft3(int[] nums)
         {
-            return new int[] { };
+            //new array to hold new order
+            int[] rotate = new int[nums.Length];
+            //set last int in new array to the first in old array
+            rotate[rotate.Length-1] = nums[0];
+            //for loop to set the rest
+            for (int i=0; i<nums.Length-1; i++)
+            {
+                rotate[i] = nums[i + 1];
+            }
+            return rotate;
         }
 
     }

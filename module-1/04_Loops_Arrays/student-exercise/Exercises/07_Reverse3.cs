@@ -17,7 +17,14 @@ namespace Exercises
          */
         public int[] Reverse3(int[] nums)
         {
-            return new int[] { };
+            //new array to hold new order
+            int[] reverse = new int[nums.Length];
+            //for loop to set reverse order of new array
+            for (int i=0; i<nums.Length; i++)
+            {
+                reverse[i] = nums[nums.Length - 1 - i];
+            }
+            return reverse;
         }
 
     }

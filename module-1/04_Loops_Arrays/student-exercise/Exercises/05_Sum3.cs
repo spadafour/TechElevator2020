@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,12 @@ namespace Exercises
          */
         public int Sum3(int[] nums)
         {
-            return 0;
+            int sumNums = 0;
+            for (int i=0; i<nums.Length; i++)
+            {
+                sumNums += nums[i];
+            }
+            return sumNums;
         }
 
     }

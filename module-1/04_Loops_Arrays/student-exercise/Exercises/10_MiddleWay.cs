@@ -17,7 +17,10 @@ namespace Exercises
          */
         public int[] MiddleWay(int[] a, int[] b)
         {
-            return new int[] { };
+            int middleA = a[1];
+            int middleB = b[1];
+            int[] middleDigits = {middleA, middleB};
+            return middleDigits;
         }
 
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,19 @@ namespace Exercises
          */
         public int Sum13(int[] nums)
         {
-            return 0;
+            int sumNot13 = 0;
+            for (int i=0; i<nums.Length; i++)
+            {
+                if (nums[i] == 13)
+                {
+                    i++;
+                }
+                else
+                {
+                    sumNot13 += nums[i];
+                }
+            }
+            return sumNot13;
         }
 
     }
