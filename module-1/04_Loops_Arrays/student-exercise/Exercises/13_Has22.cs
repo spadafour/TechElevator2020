@@ -26,7 +26,7 @@ namespace Exercises
                 }
                 holder = nums[i];
             }
-            return false;
+            return twoNextTo;
         }
 
     }
