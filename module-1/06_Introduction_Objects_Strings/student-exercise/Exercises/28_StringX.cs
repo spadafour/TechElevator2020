@@ -17,7 +17,22 @@ namespace Exercises
         */
         public string StringX(string str)
         {
-            return null;
+            string noX = str;
+            if (str.Length > 1)
+            {
+                string noXFirst = $"{str[0]}";
+                string noXLast = $"{str[str.Length-1]}";
+                string noXMid = "";
+                for (int i = 1; i < str.Length - 1; i++)
+                {
+                    if (str[i] != 'x')
+                    {
+                        noXMid += str[i];
+                    }
+                }
+                noX = noXFirst + noXMid + noXLast;
+            }
+            return noX;
         }
     }
 }

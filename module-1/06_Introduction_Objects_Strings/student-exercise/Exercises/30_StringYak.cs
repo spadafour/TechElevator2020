@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,7 +18,8 @@ namespace Exercises
          */
         public string StringYak(string str)
         {
-            return null;
+            string noYak = str.Replace("yak", "");
+            return noYak;
         }
     }
 }

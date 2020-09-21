@@ -16,7 +16,17 @@ namespace Exercises
          */
         public int CountXX(string str)
         {
-            return 0;
+            int sumX = 0;
+            for (int i=0; i<str.Length-1; i++)
+            {
+                bool isX = str[i] == 'x';
+                bool isSame = str[i] == str[i + 1];
+                if (isX && isSame)
+                {
+                    sumX++;
+                }
+            }
+            return sumX;
         }
     }
 }

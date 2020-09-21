@@ -16,7 +16,20 @@ namespace Exercises
          */
         public string AltPairs(string str)
         {
-            return null;
+            string fullStr = str;
+            if (str.Length > 1)
+            {
+                fullStr = "";
+                for (int i = 0; i < str.Length; i += 4)
+                {
+                    fullStr += $"{str[i]}";
+                    if (i != str.Length-1)
+                    {
+                        fullStr += $"{str[i + 1]}";
+                    }
+                }
+            }
+            return fullStr;
         }
     }
 }
