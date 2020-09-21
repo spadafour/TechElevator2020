@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,7 +18,10 @@ namespace Exercises
          */
         public string NTwice(string str, int n)
         {
-            return null;
+            string strBegin = str.Substring(0, n);
+            string strEnd = str.Substring(str.Length - n);
+            string nTwice = strBegin + strEnd;
+            return nTwice;
         }
     }
 }

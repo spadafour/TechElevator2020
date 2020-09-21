@@ -17,7 +17,10 @@ namespace Exercises
          */
         public string NonStart(string a, string b)
         {
-            return null;
+            string stripA = a.Substring(1);
+            string stripB = b.Substring(1);
+            string concatAB = stripA + stripB;
+            return concatAB;
         }
     }
 }

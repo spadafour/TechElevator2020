@@ -17,7 +17,8 @@ namespace Exercises
         */
         public string MakeAbba(string a, string b)
         {
-            return null;
+            string result = a + b + b + a;
+            return result;
         }
     }
 }

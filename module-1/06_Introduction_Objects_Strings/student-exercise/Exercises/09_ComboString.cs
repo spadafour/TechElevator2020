@@ -18,7 +18,16 @@ namespace Exercises
         */
         public string ComboString(string a, string b)
         {
-            return null;
+            string combo;
+            if (a.Length>b.Length)
+            {
+                combo = b + a + b;
+            }
+            else
+            {
+                combo = a + b + a;
+            }
+            return combo;
         }
     }
 }

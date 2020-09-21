@@ -17,7 +17,9 @@ namespace Exercises
          */
         public string Right2(string str)
         {
-            return null;
+            string lastTwo = str.Substring(str.Length - 2, 2);
+            string twoOnFront = lastTwo + str.Substring(0, str.Length - 2);
+            return twoOnFront;
         }
     }
 }

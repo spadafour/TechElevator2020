@@ -17,7 +17,13 @@ namespace Exercises
          */
         public string WithoutEnd2(string str)
         {
-            return null;
+            string without = "";
+            if (str.Length > 2)
+            {
+                without = str.Substring(1, str.Length - 2);
+
+            }
+            return without;
         }
     }
 }

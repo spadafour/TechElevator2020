@@ -18,7 +18,13 @@ namespace Exercises
          */
         public bool HasBad(string str)
         {
-            return false;
+            string badStr = str;
+            while (badStr.Length<4)
+            {
+                badStr += "x";
+            }
+            bool hasBad = badStr.Substring(0, 4).Contains("bad");
+            return hasBad;
         }
     }
 }

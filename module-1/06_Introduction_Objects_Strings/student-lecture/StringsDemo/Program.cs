@@ -16,30 +16,41 @@ namespace StringsDemo
             // Output: A
             // Output: e
 
-            // Console.WriteLine("First and Last Character. ");
+            Console.WriteLine("First and Last Character. ");
+            Console.WriteLine(name[0]);
+            Console.WriteLine(name[name.Length-1]);
 
             // 2. How do we write code that prints out the first three characters
             // Output: Ada
 
-            // Console.WriteLine("First 3 characters: ");
+            Console.WriteLine("First 3 characters: ");
+            string firstThree = name.Substring(0, 3);
+            Console.WriteLine(firstThree);
 
             // 3. Now print out the first three and the last three characters
             // Output: Adaace
 
-            // Console.WriteLine("Last 3 characters: ");
+            Console.WriteLine("Last 3 characters: ");
+            string lastThree = name.Substring(name.Length-3);
+            Console.WriteLine(firstThree + lastThree);
 
             // 4. What about the last word?
             // Output: Lovelace
 
-            // Console.WriteLine("Last Word: ");
+            Console.WriteLine("Last Word: ");
+            string[] words = name.Split(' ');
+            Console.WriteLine(words[1]);
 
             // 5. Does the string contain inside of it "Love"?
             // Output: true
 
             // Console.WriteLine("Contains \"Love\"");
+            Console.WriteLine(name.Contains("Love"));
 
             // 6. Where does the string "lace" show up in name?
             // Output: 8
+            int lace = name.IndexOf("lace");
+            Console.WriteLine(lace);
 
             // Console.WriteLine("Index of \"lace\": ");
 
@@ -47,6 +58,17 @@ namespace StringsDemo
             // Output: 3
 
             // Console.WriteLine("Number of \"a's\": ");
+
+            int aCount = 0;
+            for (int i = 0; i < name.Length; i++)
+            {
+                char foo = name.ToLower()[i];
+                if (foo == 'a')
+                {
+                    aCount++;
+                }
+            }
+            Console.WriteLine(aCount);
 
             // 8. Replace "Ada" with "Ada, Countess of Lovelace"
 
