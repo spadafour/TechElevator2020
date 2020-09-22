@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +17,12 @@ namespace Exercises
          */
         public string[] List2Array(List<string> stringList)
         {
-            return null;
+            string[] arrList = new string[stringList.Count];
+            for (int i=0; i<arrList.Length; i++)
+            {
+                arrList[i] = stringList[i];
+            }
+            return arrList;
         }
     }
 }

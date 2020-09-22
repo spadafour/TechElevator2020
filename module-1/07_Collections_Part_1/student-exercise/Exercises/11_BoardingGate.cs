@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,32 @@ namespace Exercises
          */
         public List<int> BoardingGate(List<int> seatNumberList)
         {
-            return null;
+            List<int> boardingStart = new List<int>();
+            List<int> boardingMiddle = new List<int>();
+            List<int> boardingEnd = new List<int>();
+
+            foreach (int seat in seatNumberList)
+            {
+                if (seat >= 1 && seat <= 10)
+                {
+                    boardingStart.Add(seat);
+                }
+                if (seat >= 11 && seat <= 20)
+                {
+                    boardingMiddle.Add(seat);
+                }
+                if (seat >= 21 && seat <=30)
+                {
+                    boardingEnd.Add(seat);
+                }
+            }
+
+            List<int> boardingQueue = new List<int>();
+            boardingQueue.AddRange(boardingStart);
+            boardingQueue.AddRange(boardingMiddle);
+            boardingQueue.AddRange(boardingEnd);
+
+            return boardingQueue;
         }
     }
 }

@@ -16,7 +16,12 @@ namespace Exercises
          */
         public List<string> Array2List(string[] stringArray)
         {
-            return null;
+            List<string> array2 = new List<string>();
+            foreach (string word in stringArray)
+            {
+                array2.Add(word);
+            }
+            return array2;
         }
 
     }

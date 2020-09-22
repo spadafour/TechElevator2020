@@ -18,7 +18,12 @@ namespace Exercises
          */
         public List<string> ReverseList(List<string> objectList)
         {
-            return null;
+            List<string> reverse = new List<string>();
+            foreach (string obj in objectList)
+            {
+                reverse.Insert(0, obj);
+            }
+            return reverse;
         }
 
     }

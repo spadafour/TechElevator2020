@@ -16,7 +16,13 @@ namespace Exercises
          */
         public List<double> ArrayInt2ListDouble(int[] intArray)
         {
-            return null;
+            List<double> div2 = new List<double>();
+            foreach (int num in intArray)
+            {
+                double halfNum = num / 2.0;
+                div2.Add(halfNum);
+            }
+            return div2;
         }
 
     }
