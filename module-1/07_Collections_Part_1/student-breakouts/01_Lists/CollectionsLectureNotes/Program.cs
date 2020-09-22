@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 namespace CollectionsLectureNotes
 {
@@ -18,11 +19,16 @@ namespace CollectionsLectureNotes
             //
 
             // Create two lists of integers
-
+            List<int> intsA = new List<int>() { 1, 2, 3 };
+            List<int> intsB = new List<int>() { 4, 5, 6 };
 
             // Create list of strings
+            List<string> strings = new List<string>() { "apple", "banana", "cabinet" };
 
             // Write these variables to the console
+            Console.WriteLine(intsA[0]);
+            Console.WriteLine(intsB[1]);
+            Console.WriteLine(strings);
 
             // Discuss: What did you see on the console? Is that what you expected?
 
@@ -34,11 +40,24 @@ namespace CollectionsLectureNotes
             //////////////////
 
             // Check if the first list you created is equal to the second list
+            bool isSame = intsA == intsB;
+
             // If they are equal, write "They are the same" to the console.
+            if (isSame)
+            {
+                Console.WriteLine("They are the same");
+            }
+
             // If they are not equal, write "They are not the same" to the console.
             // Discuss: Why did you get that result?
+            else
+            {
+                Console.WriteLine("They are different");
+            }
 
             // Assign the first integer list to the second integer list
+            intsA[0] = intsB[0];
+            Console.WriteLine(intsA[0]);
 
             // Check if the first list you created is equal to the second list
             // If they are equal, write "They are the same" to the console.
@@ -51,9 +70,14 @@ namespace CollectionsLectureNotes
             /////////////////
 
             // Add three numbers to one of the integer lists
+            intsA.Add(10);
+            intsA.Add(11);
+            intsA.Add(12);
 
             // Add four words to the list of strings
-
+            strings.Add("one");
+            strings.Add("two");
+            strings.Add("three");
 
             //////////////////
             // ACCESSING BY INDEX
