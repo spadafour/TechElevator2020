@@ -16,7 +16,8 @@ namespace Exercises
          */
         public int FindLargest(List<int> integerList)
         {
-            return -1;
+            return 0;
         }
+
     }
 }
