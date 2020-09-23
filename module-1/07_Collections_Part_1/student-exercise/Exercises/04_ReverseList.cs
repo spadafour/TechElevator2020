@@ -19,11 +19,33 @@ namespace Exercises
         public List<string> ReverseList(List<string> objectList)
         {
             List<string> reverse = new List<string>();
+            //Super simple method
+            //reverse.Reverse();
             foreach (string obj in objectList)
             {
                 reverse.Insert(0, obj);
             }
+
             return reverse;
+
+
+            ////here's a "LIFO hint" solution
+            
+            //Stack<string> reverseStack = new Stack<string>();
+            //foreach (string obj in objectList)
+            //{
+            //    reverseStack.Push(obj);
+            //}
+
+            ////tests look for a list back, so put stack into a list
+            
+            //List<string> reverseString = new List<string>();
+            //foreach (string obj in reverseStack)
+            //{
+            //    reverseString.Add(obj);
+            //}    
+
+            //return reverseString;
         }
 
     }

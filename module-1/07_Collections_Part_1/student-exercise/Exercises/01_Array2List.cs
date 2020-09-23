@@ -17,6 +17,8 @@ namespace Exercises
         public List<string> Array2List(string[] stringArray)
         {
             List<string> array2 = new List<string>();
+            //Super simple method
+            //array2 = stringArray.ToList();
             foreach (string word in stringArray)
             {
                 array2.Add(word);

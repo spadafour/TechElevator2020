@@ -18,7 +18,9 @@ namespace Exercises
         public string[] List2Array(List<string> stringList)
         {
             string[] arrList = new string[stringList.Count];
-            for (int i=0; i<arrList.Length; i++)
+            //Super simple method
+            //arrList = stringList.ToArray();
+            for (int i = 0; i < arrList.Length; i++)
             {
                 arrList[i] = stringList[i];
             }
