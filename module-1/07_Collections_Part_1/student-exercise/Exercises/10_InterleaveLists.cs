@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,58 +19,46 @@ namespace Exercises
          */
         public List<int> InterleaveLists(List<int> listOne, List<int> listTwo)
         {
-            
-            //I know this isn't the most elegant code, but I was having fun getting this logic to work. Sorry for the mess!
-            
-            //create new list to hold lists one and two together
-            List<int> listAll = new List<int>();
-            listAll.AddRange(listOne);
-            listAll.AddRange(listTwo);
+            //Declare variables for interleaved output and count of both input lists
+            List<int> interleaved = new List<int>();
+            int oneCount = listOne.Count();
+            int twoCount = listTwo.Count();
+            //declared variables if the counts are different
+            int countDiff;
+            int extraNumIndexStart;
 
-            //if one is larger than the other, pull the extra numbers out and hold them in a separate list
-            List<int> extraHolder = new List<int>();
-            int oneLength = listOne.Count();
-            int twoLength = listTwo.Count();
-            int lengthDiff = 0;
-            if (oneLength>twoLength)
+            //generating output based on Count listOne vs Count listTwo
+            if (oneCount>twoCount)
             {
-                lengthDiff = oneLength - twoLength; 
-                extraHolder.AddRange(listOne.GetRange(oneLength-lengthDiff, lengthDiff));
-                listAll.RemoveRange(oneLength - lengthDiff, lengthDiff);
-                oneLength -= lengthDiff;
-            }
-            if (twoLength>oneLength)
+                countDiff = oneCount - twoCount;
+                extraNumIndexStart = oneCount - countDiff;
+                for (int i=0; i<twoCount; i++)
+                {
+                    interleaved.Add(listOne[i]);
+                    interleaved.Add(listTwo[i]);
+                }
+                interleaved.AddRange(listOne.GetRange(extraNumIndexStart, countDiff));
+            } else if (twoCount>oneCount)
             {
-                lengthDiff = twoLength - oneLength;
-                extraHolder.AddRange(listTwo.GetRange(twoLength - lengthDiff, lengthDiff));
-                listAll.RemoveRange(listAll.Count() - lengthDiff, lengthDiff);
-            }
-
-            //Create new interweaved list to hold final output, and generate interweaved output
-            List<int> interweaved = new List<int>();
-            for (int i=0; i<oneLength; i++)
+                countDiff = twoCount - oneCount;
+                extraNumIndexStart = twoCount - countDiff;
+                for (int i=0; i<oneCount; i++)
+                {
+                    interleaved.Add(listOne[i]);
+                    interleaved.Add(listTwo[i]);
+                }
+                interleaved.AddRange(listTwo.GetRange(extraNumIndexStart, countDiff));
+            } else
             {
-                interweaved.Add(listAll[i]);
-                interweaved.Add(listAll[i + oneLength]);
-            }
-
-            //add extra holder back onto the end of the output
-            if (lengthDiff > 0)
-            {
-                interweaved.AddRange(extraHolder);
+                for (int i=0; i<oneCount; i++)
+                {
+                    interleaved.Add(listOne[i]);
+                    interleaved.Add(listTwo[i]);
+                }
             }
 
-            return interweaved;
-
-
-
-
-
-
-
-
-
-
+            //ouput
+            return interleaved;
         }
     }
 }

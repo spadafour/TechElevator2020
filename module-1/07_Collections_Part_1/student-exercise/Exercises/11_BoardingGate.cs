@@ -21,23 +21,23 @@ namespace Exercises
          */
         public List<int> BoardingGate(List<int> seatNumberList)
         {
-            List<int> boardingStart = new List<int>();
-            List<int> boardingMiddle = new List<int>();
-            List<int> boardingEnd = new List<int>();
+            Queue<int> boardingStart = new Queue<int>();
+            Queue<int> boardingMiddle = new Queue<int>();
+            Queue<int> boardingEnd = new Queue<int>();
 
             foreach (int seat in seatNumberList)
             {
                 if (seat >= 1 && seat <= 10)
                 {
-                    boardingStart.Add(seat);
+                    boardingStart.Enqueue(seat);
                 }
                 if (seat >= 11 && seat <= 20)
                 {
-                    boardingMiddle.Add(seat);
+                    boardingMiddle.Enqueue(seat);
                 }
                 if (seat >= 21 && seat <=30)
                 {
-                    boardingEnd.Add(seat);
+                    boardingEnd.Enqueue(seat);
                 }
             }
 
