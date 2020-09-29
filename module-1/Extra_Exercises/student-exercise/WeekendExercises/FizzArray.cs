@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,7 +20,15 @@ namespace Exercises
          */
         public int[] FizzArray(int n)
         {
-            return new int[] { };
+            int[] fizzArray = new int[n];
+            if (n != 0)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    fizzArray[i] = i;
+                }
+            }
+            return fizzArray;
         }
     }
 }

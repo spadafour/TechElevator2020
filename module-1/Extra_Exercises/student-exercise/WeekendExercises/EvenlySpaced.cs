@@ -17,7 +17,38 @@ namespace Exercises
         */
         public bool EvenlySpaced(int a, int b, int c)
         {
-            return false;
+            //int small;
+            //int med;
+            //int large;
+
+            //if (a > b && a > c)
+            //{
+            //    large = a;
+            //    if (b > c) { med = b; small = c; }
+            //    else { med = c; small = b; }
+            //}
+            //else if (b > a && b > c)
+            //{
+            //    large = b;
+            //    if (a > c) { med = a; small = c; }
+            //    else { med = c; small = a; }
+            //}
+            //else
+            //{
+            //    large = c;
+            //    if (a > b) { med = a; small = b; }
+            //    else { med = b; small = a; }
+            //}
+
+            //int diffSmallMed = med - small;
+            //int diffMedLrg = large - med;
+
+            //return diffMedLrg == diffSmallMed;
+
+            List<int> numSort = new List<int> { a, b, c };
+            numSort.Sort();
+            bool isEvenlySpaced = numSort[2] - numSort[1] == numSort[1] - numSort[0];
+            return isEvenlySpaced;
         }
     }
 }

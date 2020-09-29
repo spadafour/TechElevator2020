@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,7 +19,16 @@ namespace Exercises
          */
         public bool Has12(int[] nums)
         {
-            return false;
+            bool has12 = false;
+            if (nums.Contains(1) && nums.Contains(2))
+            {
+                int firstOneIndex = Array.IndexOf(nums, 1);
+                for (int i = firstOneIndex; i<nums.Length; i++)
+                {
+                    if (nums[i] == 2) { has12 = true; }
+                }
+            }
+            return has12;
         }
     }
 }

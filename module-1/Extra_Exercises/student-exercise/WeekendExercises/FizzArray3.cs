@@ -18,7 +18,12 @@ namespace Exercises
          */
         public int[] FizzArray3(int start, int end)
         {
-            return new int[] { };
+            int[] fizzArray3 = new int[end - start];
+            for (int i = 0; i < end - start; i++)
+            {
+                fizzArray3[i] = start + i;
+            }
+            return fizzArray3;
         }
 
 

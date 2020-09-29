@@ -16,6 +16,11 @@ namespace Exercises
          */
         public bool Array123(int[] nums)
         {
+            string stringNum = string.Concat(nums);
+            if (stringNum.Contains("123"))
+            {
+                return true;
+            }
             return false;
         }
     }

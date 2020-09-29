@@ -19,7 +19,13 @@ namespace Exercises
          */
         public int[] BiggerTwo(int[] a, int[] b)
         {
-            return new int[] { };
+            int[] biggerArr;
+            int sumA = a.Sum();
+            int sumB = b.Sum();
+
+            biggerArr = sumA >= sumB ? a : b;
+
+            return biggerArr;
         }
     }
 }

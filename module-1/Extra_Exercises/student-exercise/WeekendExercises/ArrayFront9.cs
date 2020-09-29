@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +18,17 @@ namespace Exercises
         */
         public bool ArrayFront9(int[] nums)
         {
-            return false;
+            if (nums.Length < 4)
+            {
+                return nums.Contains(9);
+            } else
+            {
+                for (int i=0; i<4; i++)
+                {
+                    if (nums[i] == 9) { return true; }
+                }
+                return false;
+            }
         }
     }
 }

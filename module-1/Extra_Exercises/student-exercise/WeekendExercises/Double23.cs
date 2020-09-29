@@ -18,7 +18,9 @@ namespace Exercises
          */
         public bool Double23(int[] nums)
         {
-            return false;
+            string stringCompare = string.Concat(nums);
+            if (stringCompare == "22" || stringCompare == "33") { return true; }
+            else { return false; }
         }
     }
 }

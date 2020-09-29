@@ -17,7 +17,21 @@ namespace Exercises
          */
         public int[] Fix23(int[] nums)
         {
-            return new int[] { };
+            int[] fix23 = new int[nums.Length];
+            for (int i = 0; i < nums.Length; i++)
+            {
+                fix23[i] = nums[i];
+            }
+
+            for (int i = 0; i < fix23.Length - 1; i++)
+            {
+                if (fix23[i] == 2 && fix23[i + 1] == 3)
+                {
+                    fix23[i + 1] = 0;
+                }
+            }
+
+            return fix23;
         }
     }
 }
