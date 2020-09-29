@@ -18,7 +18,9 @@ namespace Exercises
          */
         public int[] MakeLast(int[] nums)
         {
-            return new int[] { };
+            int[] makeLast = new int[nums.Length * 2];
+            makeLast[makeLast.Length - 1] = nums[nums.Length - 1];
+            return makeLast;
         }
     }
 }

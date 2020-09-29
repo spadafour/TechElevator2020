@@ -16,7 +16,8 @@ namespace Exercises
         */
         public bool Has23(int[] nums)
         {
-            return false;
+
+            return nums.Contains(2) || nums.Contains(3);
         }
     }
 }

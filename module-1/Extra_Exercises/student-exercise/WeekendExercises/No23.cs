@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +17,8 @@ namespace Exercises
          */
         public bool No23(int[] nums)
         {
-            return false;
+            bool no23 = !nums.Contains(2) && !nums.Contains(3);
+            return no23;
         }
     }
 }

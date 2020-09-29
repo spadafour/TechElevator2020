@@ -16,7 +16,15 @@ namespace Exercises
          */
         public bool More14(int[] nums)
         {
-            return false;
+            int count1 = 0;
+            int count4 = 0;
+            foreach (int num in nums)
+            {
+                if (num == 1) { count1++; }
+                if (num == 4) { count4++; }
+            }
+            bool more1Than4 = count1 > count4;
+            return more1Than4;
         }
 
 

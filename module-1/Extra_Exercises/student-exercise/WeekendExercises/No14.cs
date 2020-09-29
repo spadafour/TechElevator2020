@@ -18,7 +18,8 @@ namespace Exercises
          */
         public bool No14(int[] nums)
         {
-            return false;
+            bool no14 = !nums.Contains(1) || !nums.Contains(4);
+            return no14;
         }
     }
 }

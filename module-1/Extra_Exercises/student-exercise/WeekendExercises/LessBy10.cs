@@ -16,7 +16,11 @@ namespace Exercises
          */
         public bool LessBy10(int a, int b, int c)
         {
-            return false;
+            bool isLessBy10 = false;
+            int[] lessBy10 = new int[3] { a, b, c };
+            Array.Sort(lessBy10);
+            if (lessBy10[2] - lessBy10[1] >= 10 || lessBy10[2] - lessBy10[0] >= 10 || lessBy10[1] - lessBy10[0] >= 10) { isLessBy10 = true; }
+            return isLessBy10;
         }
 
 
