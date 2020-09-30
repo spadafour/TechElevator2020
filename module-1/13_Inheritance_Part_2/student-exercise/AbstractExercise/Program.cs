@@ -8,7 +8,7 @@ namespace AbstractExercise
         static void Main(string[] args)
         {
             //uncomment after step 1:
-            //List<Wall> walls = new List<Wall>();
+            List<Wall> walls = new List<Wall>();
 
             while (true)
             {
@@ -22,7 +22,7 @@ namespace AbstractExercise
                 if (userChoice == "1")
                 {
                     //uncomment after step 1:
-                    //Wall newWall = null;
+                    Wall newWall = null;
 
                     Console.WriteLine("What's the name of the new wall?");
                     string name = Console.ReadLine();
@@ -44,7 +44,7 @@ namespace AbstractExercise
                         int length = int.Parse(Console.ReadLine());
 
                         //uncomment after step 2:
-                        //newWall = new RectangleWall(name, color, height, length);
+                        newWall = new RectangleWall(name, color, height, length);
                     }
                     else if (shapeChoice == "2")
                     {
@@ -52,7 +52,7 @@ namespace AbstractExercise
                         int sideLength = int.Parse(Console.ReadLine());
 
                         //uncomment after step 4:
-                        //newWall = new SquareWall(name, color, sideLength);
+                        newWall = new SquareWall(name, color, sideLength);
                     }
                     else if (shapeChoice == "3")
                     {
@@ -62,12 +62,12 @@ namespace AbstractExercise
                         int triangleBase = int.Parse(Console.ReadLine());
 
                         //uncomment after step 3:
-                        //newWall = new TriangleWall(name, color, height, triangleBase);
+                        newWall = new TriangleWall(name, color, height, triangleBase);
                     }
 
                     //uncomment after step 2:
-                    //Console.WriteLine($"Added {newWall} wall - {newWall.GetArea()} square feet");
-                    //walls.Add(newWall);
+                    Console.WriteLine($"Added {newWall} wall - {newWall.GetArea()} square feet");
+                    walls.Add(newWall);
                 }
                 else if (userChoice == "2")
                 {
@@ -75,17 +75,17 @@ namespace AbstractExercise
 
                     int totalArea = 0;
                     //uncomment after step 2:
-                    //for (int i = 0; i < walls.Count; i++)
-                    //{
-                    //    Wall wall = walls[i];
-                    //    int wallArea = wall.GetArea();
+                    for (int i = 0; i < walls.Count; i++)
+                    {
+                        Wall wall = walls[i];
+                        int wallArea = wall.GetArea();
 
-                    //    Console.WriteLine($"Wall {i + 1}: {wall} - {wallArea} square feet");
+                        Console.WriteLine($"Wall {i + 1}: {wall} - {wallArea} square feet");
 
-                    //    totalArea += wallArea;
-                    //    colorChoiceAreas.TryGetValue(wall.Color, out int currentColorArea);
-                    //    colorChoiceAreas[wall.Color] = currentColorArea + wallArea;
-                    //}
+                        totalArea += wallArea;
+                        colorChoiceAreas.TryGetValue(wall.Color, out int currentColorArea);
+                        colorChoiceAreas[wall.Color] = currentColorArea + wallArea;
+                    }
 
                     Console.WriteLine("===============================");
                     Console.WriteLine("Total Area: " + totalArea + " square feet");
