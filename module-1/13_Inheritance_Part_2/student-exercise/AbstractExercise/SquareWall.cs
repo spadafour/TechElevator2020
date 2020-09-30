@@ -11,7 +11,7 @@ namespace AbstractExercise
 
         public override string ToString()
         {
-            return $"{this.Name} ({this.Length}x{this.Height}) square";
+            return $"{Name} ({Length}x{Height}) square";
         }
     }
 }
