@@ -18,7 +18,13 @@ namespace Exercises
          */
         public bool Only14(int[] nums)
         {
-            return false;
+
+            bool only14 = true;
+            foreach (int num in nums)
+            {
+                if (!(num == 1 || num == 4)) { only14 = false; }
+            }
+            return only14;
         }
     }
 }

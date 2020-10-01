@@ -16,7 +16,10 @@ namespace Exercises
          */
         public int[] PlusTwo(int[] a, int[] b)
         {
-            return new int[] { };
+            int[] plusTwo = new int[a.Length + b.Length];
+            a.CopyTo(plusTwo, 0);
+            b.CopyTo(plusTwo, a.Length);
+            return plusTwo;
         }
 
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,7 +18,12 @@ namespace Exercises
          */
         public int[] SwapEnds(int[] nums)
         {
-            return new int[] { };
+            int[] swapEnds = new int[nums.Length];
+            nums.CopyTo(swapEnds, 0);
+            int firstNum = nums[0];
+            swapEnds[0] = nums[nums.Length - 1];
+            swapEnds[nums.Length - 1] = firstNum;
+            return swapEnds;
         }
 
 
