@@ -21,6 +21,7 @@ namespace Exercises.Tests
         [DataRow(new int[] { 10, 99, 5 }, new int[] { 10, 10, 10 })]
         [DataRow(new int[] { 5, 4, -10 }, new int[] { 5, 5, 5 })]
         [DataRow(new int[] { 1, 0, 0 }, new int[] { 1, 1, 1 })]
+        [DataRow(new int[] { int.MaxValue, 0, 0 }, new int[] { int.MaxValue, int.MaxValue, int.MaxValue })]
         public void FirstIsLargest(int[] originalArr, int[] expected)
         {
             MaxEnd3 maxend3 = new MaxEnd3();
@@ -34,6 +35,7 @@ namespace Exercises.Tests
         [DataRow(new int[] { 5, 99, 10 }, new int[] { 10, 10, 10 })]
         [DataRow(new int[] { -10, 4, 5 }, new int[] { 5, 5, 5 })]
         [DataRow(new int[] { 0, 0, 1 }, new int[] { 1, 1, 1 })]
+        [DataRow(new int[] { 0, 0, int.MaxValue }, new int[] { int.MaxValue, int.MaxValue, int.MaxValue })]
         public void LastIsLargest(int[] originalArr, int[] expected)
         {
             MaxEnd3 maxend3 = new MaxEnd3();

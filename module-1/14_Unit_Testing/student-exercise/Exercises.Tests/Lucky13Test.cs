@@ -13,6 +13,8 @@ namespace Exercises.Tests
         [DataRow(new int[] { 1 })]
         [DataRow(new int[] { 1, 1, 1 })]
         [DataRow(new int[] { 1, -2, -4 })]
+        [DataRow(new int[] { 1, -2, int.MaxValue })]
+        [DataRow(new int[] { 1, -2, int.MinValue })]
         public void HasOnes(int[] luckyArr)
         {
             Lucky13 lucky13 = new Lucky13();
@@ -26,6 +28,8 @@ namespace Exercises.Tests
         [DataRow(new int[] { 3 })]
         [DataRow(new int[] { 3, 3, 3 })]
         [DataRow( new int[] { 3, -2, -4 })]
+        [DataRow( new int[] { 3, -2, int.MaxValue })]
+        [DataRow( new int[] { 3, -2, int.MinValue })]
         public void HasThrees(int[] luckyArr)
         {
             Lucky13 lucky13 = new Lucky13();
