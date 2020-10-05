@@ -54,40 +54,48 @@ namespace WordSearch
             }
 
             //Open the file
-            using (StreamReader stream = new StreamReader(fileName))
+            try
             {
-
-                //Loop through each line in the file
-                int lineNumber = 1;
-                while (!stream.EndOfStream)
+                using (StreamReader stream = new StreamReader(fileName))
                 {
-                    string line = stream.ReadLine();
 
-                    //Search case insensitive
-                    if (caseCheck == "n")
+                    //Loop through each line in the file
+                    int lineNumber = 1;
+                    while (!stream.EndOfStream)
                     {
-                        string wordLower = searchWord.ToLower();
-                        string wordUpper = searchWord.ToUpper();
-                        string wordProper = char.ToUpper(searchWord[0]) + wordLower.Substring(1);
+                        string line = stream.ReadLine();
 
-                        if (line.Contains(wordLower) || line.Contains(wordUpper) || line.Contains(wordProper))
+                        //Search case insensitive
+                        if (caseCheck == "n")
                         {
-                            Console.WriteLine($"{lineNumber}) {line}");
-                        }
-                        lineNumber++;
-                    }
+                            string wordLower = searchWord.ToLower();
+                            string wordUpper = searchWord.ToUpper();
+                            string wordProper = char.ToUpper(searchWord[0]) + wordLower.Substring(1);
 
-                    //If the line contains the search string, print it out along with its line number
-                    else
-                    {
-                        if (line.Contains(searchWord))
-                        {
-                            Console.WriteLine($"{lineNumber}) {line}");
+                            if (line.Contains(wordLower) || line.Contains(wordUpper) || line.Contains(wordProper))
+                            {
+                                Console.WriteLine($"{lineNumber}) {line}");
+                            }
+                            lineNumber++;
                         }
-                        lineNumber++;
+
+                        //If the line contains the search string, print it out along with its line number
+                        else
+                        {
+                            if (line.Contains(searchWord))
+                            {
+                                Console.WriteLine($"{lineNumber}) {line}");
+                            }
+                            lineNumber++;
+                        }
                     }
                 }
-
+            }
+            //Catch issues during streaming
+            catch (IOException exception)
+            {
+                Console.WriteLine("Unable to read the file correctly:");
+                Console.WriteLine(exception.Message);
             }
         }
     }
