@@ -7,6 +7,7 @@ namespace QuizTracker.Classes
 {
     public static class Logger
     {
+        public static int X = 0; 
         private const string FILENAME = "100Questions.csv";
         public static bool WriteRecord(QuestionData questionData)
         {
@@ -47,6 +48,12 @@ namespace QuizTracker.Classes
                 throw e;
             }
             return output;
+        }
+
+        public static int Add1ToX()
+        {
+            X++;
+            return X;
         }
     }
 }
