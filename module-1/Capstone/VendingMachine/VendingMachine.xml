@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VendingMachine</name>
+    </assembly>
+    <members>
+        <member name="T:VendingMachine.Classes.BeverageItem">
+            <summary>
+            Item that inherits from VendingMachineItem
+            </summary>
+        </member>
+        <member name="M:VendingMachine.Classes.BeverageItem.#ctor(System.String,System.Decimal)">
+            <summary>
+            Constructor to set item's name and price. Calls the base constructor to set them
+            </summary>
+            <param name="itemName">The name of the item</param>
+            <param name="price">The price of the item</param>
+        </member>
+        <member name="M:VendingMachine.Classes.BeverageItem.Consume">
+            <summary>
+            Implementation of the abastract method for consuming the item
+            </summary>
+            <returns>The string specific to this item</returns>
+        </member>
+        <member name="T:VendingMachine.Classes.CandyItem">
+            <summary>
+            Item that inherits from VendingMachineItem
+            </summary>
+        </member>
+        <member name="M:VendingMachine.Classes.CandyItem.#ctor(System.String,System.Decimal)">
+            <summary>
+            Constructor to set item's name and price. Calls the base constructor to set them
+            </summary>
+            <param name="itemName">The name of the item</param>
+            <param name="price">The price of the item</param>
+        </member>
+        <member name="M:VendingMachine.Classes.CandyItem.Consume">
+            <summary>
+            Implementation of the abastract method for consuming the item
+            </summary>
+            <returns>The string specific to this item</returns>
+        </member>
+        <member name="T:VendingMachine.Classes.ChipItem">
+            <summary>
+            Item that inherits from VendingMachineItem
+            </summary>
+        </member>
+        <member name="M:VendingMachine.Classes.ChipItem.#ctor(System.String,System.Decimal)">
+            <summary>
+            Constructor to set item's name and price. Calls the base constructor to set them
+            </summary>
+            <param name="itemName">The name of the item</param>
+            <param name="price">The price of the item</param>
+        </member>
+        <member name="M:VendingMachine.Classes.ChipItem.Consume">
+            <summary>
+            Implementation of the abastract method for consuming the item
+            </summary>
+            <returns>The string specific to this item</returns>
+        </member>
+        <member name="T:VendingMachine.Classes.GumItem">
+            <summary>
+            Item that inherits from VendingMachineItem
+            </summary>
+        </member>
+        <member name="M:VendingMachine.Classes.GumItem.#ctor(System.String,System.Decimal)">
+            <summary>
+            Constructor to set item's name and price. Calls the base constructor to set them
+            </summary>
+            <param name="itemName">The name of the item</param>
+            <param name="price">The price of the item</param>
+        </member>
+        <member name="M:VendingMachine.Classes.GumItem.Consume">
+            <summary>
+            Implementation of the abastract method for consuming the item
+            </summary>
+            <returns>The string specific to this item</returns>
+        </member>
+        <member name="T:VendingMachine.Classes.SoldOutItem">
+            <summary>
+            Item that inherits from VendingMachineItem and represents a sold out slot
+            </summary>
+        </member>
+        <member name="M:VendingMachine.Classes.SoldOutItem.#ctor">
+            <summary>
+            Constructor to set item's name and price. Calls the base constructor to set them
+            </summary>
+            <param name="itemName">The name of the item</param>
+            <param name="price">The price of the item</param>
+        </member>
+        <member name="M:VendingMachine.Classes.SoldOutItem.Consume">
+            <summary>
+            Implementation of the abastract method for consuming the item
+            </summary>
+            <returns>The string specific to this item</returns>
+        </member>
+        <member name="P:VendingMachine.Classes.VirtualVendingMachine._currentBalance">
+            <summary>
+            This hold the balance but it's private so it can only be manipulated by methods within this class
+            </summary>
+        </member>
+        <member name="P:VendingMachine.Classes.VirtualVendingMachine.inventory">
+            <summary>
+            This stores the inventory. The string will be the slot id and the value will hold a queue of products. 
+            </summary>
+        </member>
+        <member name="M:VendingMachine.Classes.VirtualVendingMachine.#ctor">
+            <summary>
+            Default Constructor for the machine. The constructor loads the files and populates the inventory. It also resets the sales log
+            </summary>
+        </member>
+        <member name="M:VendingMachine.Classes.VirtualVendingMachine.#ctor(System.String)">
+            <summary>
+            Overloaded constructor to take in a file path incase we need a different file
+            </summary>
+            <param name="fullPath">Full path to inventory file</param>
+        </member>
+        <member name="P:VendingMachine.Classes.VirtualVendingMachine.CurrentBalance">
+            <summary>
+            Public derived property to return the current balance in the machine
+            </summary>
+        </member>
+        <member name="M:VendingMachine.Classes.VirtualVendingMachine.FeedMoney(System.Int32)">
+            <summary>
+            Public method to add money to the vending machine's balance
+            </summary>
+            <param name="dollars">Amount of dollars to add.</param>
+            <returns>The machine balance after the money is added</returns>
+        </member>
+        <member name="M:VendingMachine.Classes.VirtualVendingMachine.GetItemOutOfSlot(System.String)">
+            <summary>
+            Part of the vending method, this gets an item from the specified slot
+            </summary>
+            <param name="slotID">The slot identifier</param>
+            <returns>The next item in the specified slot</returns>
+        </member>
+        <member name="M:VendingMachine.Classes.VirtualVendingMachine.GetQuantityOfSlot(System.String)">
+            <summary>
+            Returns how many items are in a give slot
+            </summary>
+            <param name="slotID">The slot identifier</param>
+            <returns>How many items are in the slot</returns>
+        </member>
+        <member name="M:VendingMachine.Classes.VirtualVendingMachine.GetCostOfSlot(System.String)">
+            <summary>
+            Get the cost of the next item in the specified slot
+            </summary>
+            <param name="slotID">The slot identifier</param>
+            <returns>The price of the next item in the slot</returns>
+        </member>
+        <member name="M:VendingMachine.Classes.VirtualVendingMachine.Purchase(System.String)">
+            <summary>
+            Purchase an item from the machine
+            </summary>
+            <param name="slotID">The slot identifier</param>
+            <returns>The vended product</returns>
+        </member>
+        <member name="M:VendingMachine.Classes.VirtualVendingMachine.ReturnChange">
+            <summary>
+            Method to return change from the vending machine
+            </summary>
+            <returns>A changedrawer object containing the change breakdown</returns>
+        </member>
+        <member name="T:VendingMachine.Classes.VendingMachineCLI">
+            <summary>
+            This class will handle the interaction with the user. Good idea to separate
+            this out so if we need to go to a different platform, we don't mess with our 
+            core business logic
+            </summary>
+        </member>
+        <member name="F:VendingMachine.Classes.VendingMachineCLI.Option_DisplayPurchaseMenu">
+            <summary>
+            Set up some constants for the menu selections to make the code easier to read
+            </summary>
+        </member>
+        <member name="P:VendingMachine.Classes.VendingMachineCLI.vm">
+            <summary>
+            Store the vending machine object. Read only so once loaded we don't overwrite it
+            </summary>
+        </member>
+        <member name="M:VendingMachine.Classes.VendingMachineCLI.#ctor(VendingMachine.Classes.VirtualVendingMachine)">
+            <summary>
+            Constructor to get things going and have access to the vending machine
+            </summary>
+            <param name="vvm"></param>
+        </member>
+        <member name="M:VendingMachine.Classes.VendingMachineCLI.Run">
+            <summary>
+            The first method executed. This controls the flow of the program
+            </summary>
+        </member>
+        <member name="M:VendingMachine.Classes.VendingMachineCLI.PrintTitle">
+            <summary>
+            Helper method to put the title on the screen
+            </summary>
+        </member>
+        <member name="M:VendingMachine.Classes.VendingMachineCLI.DisplayMainMenu">
+            <summary>
+            The first menu
+            </summary>
+        </member>
+        <member name="M:VendingMachine.Classes.VendingMachineCLI.DisplayInventory">
+            <summary>
+            This displays the current inventory to the screen
+            </summary>
+        </member>
+        <member name="M:VendingMachine.Classes.VendingMachineCLI.DisplayPurchaseMenu">
+            <summary>
+            Display the purchase menu to the screen
+            </summary>
+        </member>
+        <member name="M:VendingMachine.Classes.VendingMachineCLI.AskForMoney">
+            <summary>
+            Helper method to prompt the user for money
+            </summary>
+            <returns>An integer of money. No coins accepted</returns>
+        </member>
+        <member name="M:VendingMachine.Classes.VendingMachineCLI.MakeSelection">
+            <summary>
+            Helper method to choose a product to purchase
+            </summary>
+        </member>
+        <member name="T:VendingMachine.Classes.VendingMachineItem">
+            <summary>
+            Base class for all Vending Machine Items. It is abstract since there isn't a generic Vending Machine Item.
+            </summary>
+        </member>
+        <member name="P:VendingMachine.Classes.VendingMachineItem.itemName">
+            <summary>
+            The name of the item/product
+            </summary>
+        </member>
+        <member name="P:VendingMachine.Classes.VendingMachineItem.price">
+            <summary>
+            The price of the item/product
+            </summary>
+        </member>
+        <member name="M:VendingMachine.Classes.VendingMachineItem.Consume">
+            <summary>
+            An abstract method so each derived class has a Consume method
+            </summary>
+            <returns>The string the represents the consuming of the item/product</returns>
+        </member>
+        <member name="M:VendingMachine.Classes.VendingMachineItem.#ctor(System.String,System.Decimal)">
+            <summary>
+            Constructor for the instance
+            </summary>
+            <param name="itemName">The name of the item/product</param>
+            <param name="price">The price of the item/product</param>
+        </member>
+        <member name="T:VendingMachine.Exceptions.InsufficientFundsException">
+            <summary>
+            This exception is thrown if the user doesn't have enough funds to buy the item in the slot.
+            </summary>
+        </member>
+        <member name="T:VendingMachine.Exceptions.InvalidSlotIDException">
+            <summary>
+            This exception is thrown if the user types in a slot that doesn't exist
+            </summary>
+        </member>
+        <member name="T:VendingMachine.Exceptions.OutOfStockException">
+            <summary>
+            This exception is thrown when the slot is empty
+            </summary>
+        </member>
+    </members>
+</doc>
