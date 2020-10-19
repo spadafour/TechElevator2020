@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="VendingMachine.Classes.BeverageItem" Collapsed="true">
+    <Position X="3.25" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\BeverageItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendingMachine.Classes.CandyItem" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\CandyItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendingMachine.Classes.ChangeDrawer" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAIAEAAAAAAEAAAADAEAAAgAAAIAAAAA=</HashCode>
+      <FileName>Classes\ChangeDrawer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendingMachine.Classes.ChipItem" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\ChipItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendingMachine.Classes.FileFunctions" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAQAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Classes\FileFunctions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendingMachine.Classes.GumItem" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\GumItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendingMachine.Classes.SoldOutItem" Collapsed="true">
+    <Position X="10" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\SoldOutItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendingMachine.Classes.VirtualVendingMachine" Collapsed="true">
+    <Position X="17" Y="4" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACABAABAAAAAAAAAAAQAAAAIAAKAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\VendingMachine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendingMachine.Classes.VendingMachineCLI" Collapsed="true">
+    <Position X="12.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAAgAAAAAAgkAAAAAAQEAAAAIBAEAAEAEAAAAAAABCI=</HashCode>
+      <FileName>Classes\VendingMachineCLI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendingMachine.Classes.VendingMachineItem" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAIBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\VendingMachineItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendingMachine.Exceptions.InsufficientFundsException" Collapsed="true">
+    <Position X="7.75" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\InsufficientFundsException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendingMachine.Exceptions.InvalidDollarAmount" Collapsed="true">
+    <Position X="10" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\InvalidDollarAmount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendingMachine.Exceptions.InvalidSlotIDException" Collapsed="true">
+    <Position X="3.25" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\InvalidSlotIDException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendingMachine.Exceptions.OutOfStockException" Collapsed="true">
+    <Position X="5.5" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\OutOfStockException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendingMachine.Exceptions.VendingMachineException" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\VendingMachineException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VendingMachine.Program" Collapsed="true">
+    <Position X="18.75" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
