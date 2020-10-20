@@ -39,7 +39,7 @@ firstName varchar(64) not null,
 gender varchar(9) not null,
 dateOfBirth date not null,
 dateOfHire date not null,
-deptNumber int not null,
+deptNumber int null,
 
 constraint pk_employee primary key (employeeId),
 constraint fk_jobTitleId foreign key (jobTitleId) references jobTitle(jobTitleId),
