@@ -1,9 +1,12 @@
 ﻿using ProjectOrganizer.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace ProjectOrganizer.DAL
 {
@@ -23,7 +26,29 @@ namespace ProjectOrganizer.DAL
         /// <returns></returns>
         public IList<Department> GetDepartments()
         {
-            throw new NotImplementedException();
+            IList<Department> departmentList = new List<Department>();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sqlText = "select * from department";
+                    SqlCommand command = new SqlCommand(sqlText, connection);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Department department = new Department();
+                        department.Id = Convert.ToInt32(reader["department_id"]);
+                        department.Name = Convert.ToString(reader["name"]);
+                        departmentList.Add(department);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return departmentList;
         }
 
         /// <summary>
@@ -33,7 +58,24 @@ namespace ProjectOrganizer.DAL
         /// <returns>The id of the new department (if successful).</returns>
         public int CreateDepartment(Department newDepartment)
         {
-            throw new NotImplementedException();
+            int deptId;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sqlText = "insert into department values(@name);select scope_identity();";
+                    SqlCommand command = new SqlCommand(sqlText, connection);
+                    command.Parameters.AddWithValue("@name", newDepartment.Name);
+                    deptId = Convert.ToInt32(command.ExecuteScalar());
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return deptId;
         }
         
         /// <summary>
@@ -43,8 +85,28 @@ namespace ProjectOrganizer.DAL
         /// <returns>True, if successful.</returns>
         public bool UpdateDepartment(Department updatedDepartment)
         {
-            throw new NotImplementedException();
+            bool isUpdated = false;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sqlText = "update department set name = @name where department_id = @departmentId";
+                    SqlCommand command = new SqlCommand(sqlText, connection);
+                    command.Parameters.AddWithValue("@name", updatedDepartment.Name);
+                    command.Parameters.AddWithValue("@departmentId", updatedDepartment.Id);
+                    int numUpdated = command.ExecuteNonQuery();
+                    if (numUpdated == 1)
+                    {
+                        isUpdated = true;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                isUpdated = false;
+            }
+            return isUpdated;
         }
-
     }
 }
