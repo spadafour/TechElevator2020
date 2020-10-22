@@ -81,9 +81,9 @@ namespace ProjectOrganizer.DAL
         /// <summary>
         /// Updates an existing department.
         /// </summary>
-        /// <param name="updatedDepartment">The department object.</param>
+        /// <param name="department">The department object.</param>
         /// <returns>True, if successful.</returns>
-        public bool UpdateDepartment(Department updatedDepartment)
+        public bool UpdateDepartment(Department department)
         {
             bool isUpdated = false;
             try
@@ -91,10 +91,10 @@ namespace ProjectOrganizer.DAL
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string sqlText = "update department set name = @name where department_id = @departmentId";
+                    string sqlText = "update department set name = @newName where department_id = @departmentId";
                     SqlCommand command = new SqlCommand(sqlText, connection);
-                    command.Parameters.AddWithValue("@name", updatedDepartment.Name);
-                    command.Parameters.AddWithValue("@departmentId", updatedDepartment.Id);
+                    command.Parameters.AddWithValue("@newName", department.Name);
+                    command.Parameters.AddWithValue("@departmentId", department.Id);
                     int numUpdated = command.ExecuteNonQuery();
                     if (numUpdated == 1)
                     {
