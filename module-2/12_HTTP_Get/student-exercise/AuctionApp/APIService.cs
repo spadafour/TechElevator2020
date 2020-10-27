@@ -7,24 +7,35 @@ namespace AuctionApp
 {
     public class APIService
     {
+        private readonly string API_URL = "http://localhost:3000/auctions";
+        private RestClient client = new RestClient();
+
         public List<Auction> GetAllAuctions()
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest(API_URL);
+            IRestResponse<List<Auction>> response = client.Get<List<Auction>>(request);
+            return response.Data;
         }
 
         public Auction GetDetailsForAuction(int auctionId)
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest(API_URL + $"/{auctionId}");
+            IRestResponse<Auction> response = client.Get<Auction>(request);
+            return response.Data;
         }
 
         public List<Auction> GetAuctionsSearchTitle(string searchTitle)
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest(API_URL + $"/?title_like={searchTitle}");
+            IRestResponse<List<Auction>> response = client.Get<List<Auction>>(request);
+            return response.Data;
         }
 
         public List<Auction> GetAuctionsSearchPrice(double searchPrice)
         {
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest(API_URL + $"/?currentBid_lte={searchPrice}");
+            IRestResponse<List<Auction>> response = client.Get<List<Auction>>(request);
+            return response.Data;
         }
     }
 }
