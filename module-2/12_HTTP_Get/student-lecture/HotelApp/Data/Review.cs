@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HTTP_Web_Services_GET_lecture
 {
-    class Review
+    public class Review
     {
         public int HotelID { get; set; }
         public string Title { get; set; }
