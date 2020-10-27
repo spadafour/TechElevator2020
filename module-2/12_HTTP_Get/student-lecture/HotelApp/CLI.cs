@@ -88,7 +88,7 @@ namespace HTTP_Web_Services_GET_lecture
 
         //Print methods:
 
-        public void PrintHotels(List<Hotel> hotels)
+        private void PrintHotels(List<Hotel> hotels)
         {
             Console.WriteLine("--------------------------------------------");
             Console.WriteLine("Hotels");
@@ -99,7 +99,7 @@ namespace HTTP_Web_Services_GET_lecture
             }
         }
 
-        public void PrintHotel(Hotel hotel)
+        private void PrintHotel(Hotel hotel)
         {
             Console.WriteLine("--------------------------------------------");
             Console.WriteLine("Hotel Details");
@@ -111,7 +111,7 @@ namespace HTTP_Web_Services_GET_lecture
             Console.WriteLine(" Cover Image: " + hotel?.CoverImage);
         }
 
-        public void PrintReviews(List<Review> reviews)
+        private void PrintReviews(List<Review> reviews)
         {
             Console.WriteLine("--------------------------------------------");
             Console.WriteLine("Review Details");
@@ -126,7 +126,7 @@ namespace HTTP_Web_Services_GET_lecture
                 Console.WriteLine("---");
             }
         }
-        public void PrintCity(City city)
+        private void PrintCity(City city)
         {
             Console.WriteLine("--------------------------------------------");
             Console.WriteLine("City Details");
