@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace myFirstApplication
+namespace PlayerInventoryGenerator
 {
     class Program
     {
