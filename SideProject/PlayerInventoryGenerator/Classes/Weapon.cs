@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PlayerInventoryGenerator.Classes
 {
-    class Weapon
+    public abstract class Weapon
     {
     }
 }
