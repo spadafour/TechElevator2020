@@ -1,6 +1,7 @@
 ﻿using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 
 namespace AuctionApp
@@ -96,20 +97,65 @@ namespace AuctionApp
         }
 
         public Auction AddAuction(Auction newAuction) {
-            // place code here
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest(API_URL);
+            IRestResponse<Auction> response = client.Post<Auction>(request);
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                Console.WriteLine("Error occurred - unable to reach server.");
+            }
+            else if (!response.IsSuccessful)
+            {
+                Console.WriteLine("Error occurred - received non-success response: " + (int)response.StatusCode);
+            }
+            else
+            {
+                return response.Data;
+            }
+            return null;
         }
 
         public Auction UpdateAuction(Auction auctionToUpdate)
         {
-            // place code here
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest(API_URL + auctionToUpdate);
+            if (auctionToUpdate.IsValid)
+            {
+                request.AddJsonBody(auctionToUpdate);
+            }
+            else
+            {
+                return null;
+            }
+            IRestResponse<Auction> response = client.Put<Auction>(request);
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                return null;
+            }
+            else if (!response.IsSuccessful)
+            {
+                return null;
+            }
+            else
+            {
+                return response.Data;
+            }
         }
 
         public bool DeleteAuction(int auctionId)
         {
-            // place code here
-            throw new NotImplementedException();
+            RestRequest request = new RestRequest(API_URL + auctionId);
+            IRestResponse response = client.Delete(request);
+            if (response.ResponseStatus != ResponseStatus.Completed)
+            {
+                return false;
+            }
+            else if (!response.IsSuccessful)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
