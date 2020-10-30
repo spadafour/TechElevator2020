@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using AuctionApp.Models;
 using AuctionApp.DAO;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace AuctionApp.Controllers
 {
@@ -48,9 +49,37 @@ namespace AuctionApp.Controllers
         [HttpPost]
         public ActionResult<Auction> Create(Auction auction)
         {
-            return dao.Create(auction);
+            Auction added = dao.Create(auction);
+            return Created($"/{added.Id}", added);
         }
 
+        [HttpPut("{id}")]
+        public ActionResult<Auction> Update(int id, Auction auction)
+        {
+            Auction auctionToUpdate = dao.Get(id);
+            if (auctionToUpdate == null)
+            {
+                return NotFound($"Auction {id} does not exist.");
+            }
+            else
+            {
+                Auction updatedAuction = dao.Update(id, auctionToUpdate);
+                return Ok(updatedAuction);
+            }
+        }
 
+        [HttpDelete("{id}")]
+        public ActionResult Delete(int id)
+        {
+            Auction auctionToDelete = dao.Get(id);
+            if (auctionToDelete == null)
+            {
+                return NotFound($"Auction {id} does not exist.");
+            }
+            else
+            {
+                return NoContent();
+            }
+        }
     }
 }
