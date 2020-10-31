@@ -63,7 +63,7 @@ namespace AuctionApp.Controllers
             }
             else
             {
-                Auction updatedAuction = dao.Update(id, auctionToUpdate);
+                Auction updatedAuction = dao.Update(id, auction);
                 return Ok(updatedAuction);
             }
         }
