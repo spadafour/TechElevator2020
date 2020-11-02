@@ -1,12 +1,16 @@
-﻿using System;
+﻿using LooterHero.Models;
+using System;
+using System.Security.Cryptography.X509Certificates;
 
-namespace PlayerInventoryGenerator
+namespace LooterHero
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            UI ui = new UI();
+            ui.Run();
         }
     }
 }
+ 
