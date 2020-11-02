@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using HotelReservations.Models;
 using HotelReservations.Dao;
+using System.Linq;
 
 namespace HotelReservations.Controllers
 {
@@ -46,6 +47,22 @@ namespace HotelReservations.Controllers
 
             List<Hotel> hotels = ListHotels();
             // return hotels that match state
+            List<Hotel> filteredByCity = hotels.Where(h => h.Address.City.ToLower().Equals(city?.ToLower())).ToList();
+
+            //List<Hotel> filteredAgain = hotels.Where(h => HasCity(h, city)).ToList();
+
+            //foreach (Hotel item in hotels)
+            //{
+            //    if (HasCity(item,city))
+            //    {
+            //        filteredHotels.Add(item);
+            //    }
+            //}
+            List<Hotel> filteredByState = hotels.Where(h => h.Address.State.ToLower().Equals(state?.ToLower() ?? "")).ToList();
+
+            filteredHotels.AddRange(filteredByCity);
+            filteredHotels.AddRange(filteredByState);
+
             foreach (Hotel hotel in hotels)
             {
                 if (city != null)
@@ -78,6 +95,10 @@ namespace HotelReservations.Controllers
             return reservationDao.FindByHotel(hotelId);
         }
 
+        private bool HasCity(Hotel hotel, string city)
+        {
+            return hotel.Address.City.ToLower().Equals(city?.ToLower());
+        }
 
     }
 }
