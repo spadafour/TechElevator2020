@@ -2,6 +2,7 @@
 using RestSharp.Authenticators;
 using System;
 using System.Collections.Generic;
+using System.Net;
 
 namespace AuctionApp
 {
@@ -149,6 +150,14 @@ namespace AuctionApp
             }
             else if (!response.IsSuccessful)
             {
+                if (response.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    return UNAUTHORIZED_MSG;
+                }
+                else if (response.StatusCode == HttpStatusCode.Forbidden)
+                {
+                    return FORBIDDEN_MSG;
+                }
                 return OTHER_4XX_MSG + (int)response.StatusCode;
             }
             return "";
@@ -156,9 +165,10 @@ namespace AuctionApp
 
         public API_User Login(string submittedName, string submittedPass)
         {
-
-
-            IRestResponse<API_User> response = null;
+            var credentials = new { username = submittedName, password = submittedPass };
+            RestRequest request = new RestRequest(API_BASE_URL + "login");
+            request.AddJsonBody(credentials);
+            IRestResponse<API_User> response = client.Post<API_User>(request);
 
             if (response.ResponseStatus != ResponseStatus.Completed)
             {
@@ -180,7 +190,7 @@ namespace AuctionApp
             else
             {
                 user.Token = response.Data.Token;
-
+                client.Authenticator = new JwtAuthenticator(user.Token);
                 return response.Data;
             }
         }
