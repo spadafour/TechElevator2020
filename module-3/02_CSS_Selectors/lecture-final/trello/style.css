@@ -1,0 +1,115 @@
+html {
+    height: 100%;
+    font-size: 16px;
+}
+body{
+    font-family: 'Raleway',sans-serif;
+    background-image: linear-gradient(to bottom, #858c90, #bbb);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    white-space: nowrap;
+}
+.trello-list{
+    display: inline-block;
+    width: 300px;
+    background-color: #ddd;
+    border-radius: 2px 4px;
+    margin-right: 10px;
+    vertical-align: top;
+}
+.trello-list > h2 {
+    margin: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.trello-list > ol {
+    padding: 0;
+    margin: 0;
+}
+.trello-list li {
+    list-style: none;
+    background-color: rgb(255,255,255);
+    font-size: 0.9rem;
+    border-radius: 1px;
+    margin-bottom: 10px;
+    padding: 8px;
+    white-space: normal;
+}
+
+.trello-list li:last-child {
+    margin-bottom: 0px;
+}
+
+.trello-list a {
+    display: block;
+    text-decoration: none;
+    color: #888;
+    padding: 8px 0px 8px 5px;
+}
+
+.trello-list a:hover {
+    background-color: rgba(9,45,66,0.1);
+}
+header > h1 {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+header > h1,
+header > p {
+    display: inline-block;
+
+    /* Limit height of items */
+    height: 20px;
+  
+    /* Push border away on the right */
+    padding-right: 20px;
+  
+    /* Middle align content within block */
+    vertical-align: middle;
+  
+    /* Slight off-shade of white */
+    color: rgba(255, 255, 255, 0.8);
+  
+    /* Vertical line between items */
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+.labels span {
+    display: inline-block;
+    vertical-align: top;
+    width: 35px;
+    height: 8px;
+    border-radius: 3px;
+  }
+
+  .label.pathway {
+    background-color: red;
+  }
+  
+  .label.individual {
+    background-color: green;
+  }
+  
+  .label.pair {
+    background-color: teal;
+  }
+  
+  .label.general {
+    background-color: orange;
+  }
+
+  header {
+    /* Fixed to the window */
+    position: fixed;
+  
+    /* Up against the top of container */
+    top: 0;
+  
+    /* Takes up 50px height */
+    height: 50px;
+    background-color: lightblue;
+    width: 100%;
+  }
+  main{
+      margin-top: 50px;
+  }
