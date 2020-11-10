@@ -1,0 +1,73 @@
+body {
+	text-align:center;
+	background-color:rgb(200,200,210);
+}
+
+.tribute-header {
+    text-decoration: underline;
+	text-align:center;
+	font-size:130%;
+	font-weight:900;
+	line-height:.5;
+}
+
+.tribute-div {
+    background-color: rgb(210,210,210);
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    margin-bottom: 50px;
+}
+
+.tribute-info {
+	text-align:left;
+	font-size:20px;
+	padding-left:28%;
+	padding-right:28%;
+	padding-top:50px;
+	padding-bottom:50px;
+}
+
+.submission {
+    background-color:rgb(240,240,240);
+	padding-top:20px;
+    padding-bottom: 20px;
+
+}
+
+.form-field {
+    padding-bottom: 10px;
+}
+
+table {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
+ul li {
+    padding-bottom: 5px;
+    font-style: italic;
+}
+
+#title {
+	font-size:60px;
+	line-height:.6;
+}
+
+#img-div{
+	padding-top:20px;
+	padding-bottom:1px;
+	background-color:rgb(240,240,240);
+	margin-left:18%;
+	margin-right:18%;	
+}
+
+#image {
+	max-width:100%;
+	display:block;
+	margin:0 auto;
+}
+
