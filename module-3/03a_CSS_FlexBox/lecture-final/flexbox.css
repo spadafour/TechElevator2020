@@ -1,0 +1,45 @@
+body,
+#hero footer,
+#featured section,
+#featured section article div,
+#all-items section,
+#all-items section article{
+    display: flex;
+}
+
+body,
+#all-items section {
+    flex-direction: column;
+
+}
+body{
+    align-items: center;
+}
+#hero footer {
+ justify-content: space-between;   
+}
+
+#featured section article div {
+    justify-content: center;
+}
+
+#all-items section article {
+    justify-content: center;
+    align-items: center;
+}
+
+#all-items article:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 1024px)
+{
+    #featured section{
+        flex-wrap: wrap;
+    }
+
+    #featured section article:nth-child(even)
+    {
+        border: none;
+    }
+}
