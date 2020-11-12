@@ -1,0 +1,23 @@
+﻿@model MortgageLoanEstimate
+
+<h2>Mortgage Calculator</h2>
+<form method="GET" asp-controller="Home" asp-action="mortgageCalculatorResult">
+    <div class="formInputGroup">
+        <label for="loanAmount">Loan Amount:</label>
+        <input type="text" asp-for="loanAmount" />
+    </div>
+    <div class="formInputGroup">
+        <label for="loanTerm">Loan Term:</label>
+        <select name="loanTermInYears" id="loanTermInYears">
+            <option value="10">10 Years</option>
+            <option value="15">15 Years</option>
+            <option value="30">30 Years</option>
+        </select>
+    </div>
+    <div class="formInputGroup">
+        <label for="rate">Interest Rate:</label>
+        <input type="text" asp-for="interestRate" />
+    </div>
+    <input class="formSubmitButton" type="submit" value="Calculate Payment" />
+</form>
+

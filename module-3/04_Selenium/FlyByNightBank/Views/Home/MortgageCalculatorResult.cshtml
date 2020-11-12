@@ -1,0 +1,22 @@
+﻿@model MortgageLoanEstimate
+
+<h2>Your Calculated Mortgage Payment</h2>
+
+<table id="loanPaymentCalculationResults">
+    <tr>
+        <th>Loan Amount:</th>
+        <td>$@Model.loanAmount</td>
+    </tr>
+    <tr>
+        <th>Loan Term:</th>
+        <td>@Model.loanTermInYears years</td>
+    </tr>
+    <tr>
+        <th>Interest Rate:</th>
+        <td>@Model.interestRate %</td>
+    </tr>
+    <tr>
+        <th>Monthly Payment:</th>
+        <td>@Model.getMonthlyPayment().ToString("C")</td>
+    </tr>
+</table>

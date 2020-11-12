@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlyByNightBank", "FlyByNightBank\FlyByNightBank.csproj", "{7BD9DBC5-CDB3-44A5-8196-18B3AAD24309}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlyByNightTests", "FlyByNightTests\FlyByNightTests.csproj", "{B997C7F4-F1EE-44C2-B1E7-66375F53A53D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BD9DBC5-CDB3-44A5-8196-18B3AAD24309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BD9DBC5-CDB3-44A5-8196-18B3AAD24309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BD9DBC5-CDB3-44A5-8196-18B3AAD24309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BD9DBC5-CDB3-44A5-8196-18B3AAD24309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B997C7F4-F1EE-44C2-B1E7-66375F53A53D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B997C7F4-F1EE-44C2-B1E7-66375F53A53D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B997C7F4-F1EE-44C2-B1E7-66375F53A53D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B997C7F4-F1EE-44C2-B1E7-66375F53A53D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DCBB4940-64E4-4D19-9DC4-6CC700382EF9}
+	EndGlobalSection
+EndGlobal

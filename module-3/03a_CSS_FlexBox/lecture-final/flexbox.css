@@ -16,16 +16,19 @@ body{
     align-items: center;
 }
 #hero footer {
- justify-content: space-between;   
+ justify-content: space-between; 
+ align-items: center;  
 }
-
+#all-items article div:last-child {
+    flex-basis: 80%;
+  }
+  
 #featured section article div {
     justify-content: center;
 }
 
 #all-items section article {
     justify-content: center;
-    align-items: center;
 }
 
 #all-items article:nth-child(even){
