@@ -15,8 +15,20 @@
 			// return result;
 			return x + y;
         }
+<<<<<<< HEAD
 
 
+=======
+*/
+function sumDouble(one, two)
+{
+	if(one === two)
+	{
+		return ((one + two) * 2);
+	}
+	return one + two;
+}
+>>>>>>> b1b100d1b57ba41e47617406e840ac3679219c2b
 /*
 2. **hasTeen** We'll say that a number is "teen" if it is in the range 13..19 inclusive. 
     Given 3 int values, return true if 1 or more of them are teen.
