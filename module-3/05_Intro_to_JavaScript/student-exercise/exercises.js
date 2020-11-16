@@ -15,20 +15,8 @@
 			// return result;
 			return x + y;
         }
-<<<<<<< HEAD
 
 
-=======
-*/
-function sumDouble(one, two)
-{
-	if(one === two)
-	{
-		return ((one + two) * 2);
-	}
-	return one + two;
-}
->>>>>>> b1b100d1b57ba41e47617406e840ac3679219c2b
 /*
 2. **hasTeen** We'll say that a number is "teen" if it is in the range 13..19 inclusive. 
     Given 3 int values, return true if 1 or more of them are teen.
@@ -74,7 +62,18 @@ function lastDigit(x, y)
         seeColor("blueTimes") → "blue"
 */
 
-
+function seeColor (colorString)
+{
+	if (colorString.startsWith('red'))
+	{
+		return 'red';
+	}
+	else if (colorString.startsWith('blue'))
+	{
+		return 'blue';
+	}
+	return '';
+}
 
 /*
 5. **oddOnly** Write a function that given an array of integer of any length, filters out 
@@ -84,6 +83,19 @@ function lastDigit(x, y)
 		oddOnly([2, 4, 8, 32, 256]); → []
 */
 
+function oddOnly (nums)
+{
+	const oddOnly = [];
+	for (let i=0; i<nums.length; i++)
+	{
+		if (nums[i]%2 != 0)
+		{
+			oddOnly.push(nums[i])
+		}
+	}
+	return oddOnly;
+}
+
 /*
 6. **frontAgain** Given a string, return true if the first 2 chars in the string also appear 
     at the end of the string, such as with "edited".
@@ -92,6 +104,15 @@ function lastDigit(x, y)
 		frontAgain("edit") → false
 		frontAgain("ed") → true
 */
+
+function frontAgain(word)
+{
+	if (word.substring(0,2) === word.substring(word.length-2))
+	{
+		return true;
+	}
+	return false;
+}
 
 /*
 7. **cigarParty** When squirrels get together for a party, they like to have cigars. 
@@ -105,6 +126,18 @@ or false otherwise.
 		cigarParty(70, true) → true
 */
 
+function cigarParty(cigCount, isWeekend)
+{
+	if (isWeekend == true)
+	{
+		return cigCount>39? true : false;
+	}
+	else
+	{
+		return cigCount>39 && cigCount<61 ? true : false;
+	}
+}
+
 /*
 8. **fizzBuzz** Because you know you can't live without it, FizzBuzz.
 
@@ -115,6 +148,26 @@ or false otherwise.
 		fizzBuzz(8) → 8
 */
 
+function fizzBuzz(num)
+{
+	if (num%3==0 && num%5==0)
+	{
+		return "FizzBuzz";
+	}
+	else if (num%3==0)
+	{
+		return "Fizz";
+	}
+	else if (num%5==0)
+	{
+		return "Buzz";
+	}
+	else
+	{
+		return num;
+	}
+}
+
 /*
 9. **filterEvens** Write a function that filters an array to only include even numbers.
 
@@ -124,6 +177,16 @@ or false otherwise.
 	filterEvens([100, 8, 21, 24, 62, 9, 7]) → [100, 8, 24, 62]
 */
 
+function filterEvens(numArr)
+{
+	function filterEvensHelper(num)
+	{
+		return num%2==0;
+	}
+	
+	return numArr.filter(filterEvensHelper);
+}
+
 /*
 10. **filterBigNumbers** Write a function that filters numbers greater than or equal to 100.
 
@@ -132,6 +195,17 @@ or false otherwise.
 	filterBigNumbers([]) → []
 */
 
+function filterBigNumbers(numArr)
+{
+
+	function bigNumHelper(num)
+	{
+		return num >=100;
+	}
+
+	return numArr.filter(bigNumHelper);
+}
+
 /*
 11. **filterMultiplesOfX** Write a function to filter numbers that are a multiple of a 
 parameter, `x` passed in.
@@ -139,6 +213,16 @@ parameter, `x` passed in.
 	filterMultiplesOfX([3, 5, 1, 9, 18, 21, 42, 67], 3) → [3, 9, 18, 21, 42]
 	filterMultiplesOfX([3, 5, 10, 20, 18, 21, 42, 67], 5) → [5, 10, 20]
 */
+
+function filterMultiplesOfX(numArr, multiple)
+{
+	function multiplesHelper(num)
+	{
+		return num%multiple==0;
+	}
+
+	return numArr.filter(multiplesHelper)
+}
 
 /*
 12. **createObject** Write a function that creates an object with a property called 
@@ -152,3 +236,14 @@ firstName, lastName, and age. Populate the properties with your values.
 		age
 	}
 */
+
+function createObject()
+{
+	const person = {
+		firstName: 'Rob',
+		lastName: 'Spadafore',
+		age: 30	
+	};
+
+	return person;
+}
