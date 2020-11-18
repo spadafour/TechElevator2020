@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setPageTitle();
   displayGroceries();
 
-
+  const allLIs = document.querySelectorAll('li');
   const toggleAll = document.getElementById('toggleAll');
   let completedCount = 0;
 
@@ -58,17 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function switchToCompleted(ev) {
-    if (!ev.classList.contains('completed'))
+  function switchToCompleted(li) {
+    if (!li.classList.contains('completed'))
     {
-      if (ev.tagName == 'LI') {
-        ev.classList.add('completed');
-        ev.firstElementChild.classList.add('completed');
-      }
-      if (ev.tagName == 'I') {
-        ev.classList.add('completed');
-        ev.parentElement.classList.add('completed');
-      }
+      li.classList.add('completed');
+      li.firstElementChild.classList.add('completed');
       completedCount += 1;
       if (completedCount == ul.childElementCount)
       {
@@ -76,21 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
-  ul.addEventListener('click', (event) => {
-    switchToCompleted(event.target);
-  });
 
-  function switchToIncomplete(ev) {
-    if (ev.classList.contains('completed'))
+  function switchToIncomplete(li) {
+    if (li.classList.contains('completed'))
     {
-      if (ev.tagName == 'LI') {
-        ev.classList.remove('completed');
-        ev.firstElementChild.classList.remove('completed');
-      }
-      if (ev.tagName == 'I') {
-        ev.classList.remove('completed');
-        ev.parentElement.classList.remove('completed');
-      }
+      li.classList.remove('completed');
+      li.firstElementChild.classList.remove('completed');
       completedCount -= 1;
       if (completedCount == ul.childElementCount - 1)
       {
@@ -98,24 +83,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
-  ul.addEventListener('dblclick', (event) => {
-    switchToIncomplete(event.target);
-  })
 
-  toggleAll.addEventListener('click', (event) => {
+  allLIs.forEach((li) => {
+    li.addEventListener('click', () => {
+      switchToCompleted(li);
+    });
+    li.addEventListener('dblclick', () => {
+      switchToIncomplete(li);
+    });
+  });
+
+  toggleAll.addEventListener('click', () => {
     if (toggleAll.innerText == 'MARK ALL COMPLETE')
     {
-      for (let i=0; i<ul.childElementCount; i++)
-      {
-        switchToCompleted(ul.children[i]);
-      }
+      allLIs.forEach((li) => {
+        switchToCompleted(li);
+      });
     }
     else if (toggleAll.innerText == "MARK ALL INCOMPLETE")
     {
-      for (let i=0; i<ul.childElementCount; i++)
-      {
-        switchToIncomplete(ul.children[i]);
-      }
+      allLIs.forEach((li) => {
+        switchToIncomplete(li);
+      });
     }
   });
 
