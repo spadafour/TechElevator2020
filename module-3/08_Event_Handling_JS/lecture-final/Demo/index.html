@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=<1.0>">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p>Hello World!</p>
+        <p>Goodbye Broadway!</p>
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded',()=>{
+        let elementP = document.getElementsByTagName('p')[0];
+        elementP.addEventListener('click',(event) => {
+            alert("Hey, that tickles.");
+            event.target.innerText = "Hello Mars!";
+        })
+        elementP.addEventListener('mousemove',(event) => {
+            event.target.classList.add('green');
+            event.stopPropagation();
+        })
+        let container = document.getElementById('box');
+        container.addEventListener('click',(event) => {
+            alert("You clicked target: " + event.target)
+            alert("You are on currentTarget: " + event.currentTarget)
+            alert("You clicked the div")
+        })
+        let bodyElement = document.querySelector('body');
+        bodyElement.addEventListener('click',(event) => {
+            alert("Body event: You clicked target: " + event.target)
+            alert("Body event: You are on currentTarget: " + event.currentTarget)
+        })
+        container.addEventListener('mousemove',(event) => {
+            var randomColor = Math.floor(Math.random()*16777215).toString(16);
+            elementP.style.backgroundColor = '#' + randomColor;
+        })
+})
+</script>
+<style>
+    .green {
+        background-color: green;
+    }
+    div{
+        border: 2px;
+        border-style: solid;
+        border-color: blue;
+        padding: 15px;
+    }
+    p{
+        border: 2px;
+        border-style: solid;
+        border-color: green;
+        padding: 15px;
+
+    }
+</style>
+</html>
