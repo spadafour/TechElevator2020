@@ -1,0 +1,46 @@
+End Points:
+
+POST /Login
+Input (JSon)
+	{
+	   "username":"",
+	   "password":""
+    }
+
+Output (JSon)
+    {
+        "userId":0,
+        "username":"",
+        "token":""
+    }
+    
+POST Login/register
+Input (JSon)
+	{
+	   "username":"",
+	   "password":""
+    }
+
+Output (JSon)
+    {
+        "username":""
+    }
+
+// All below require authorization
+// Retrieve all accounts for user
+GET Account 
+Output (Json)
+[
+    {
+    "accountId":0,
+    "userId:0,
+    "balance":0.0
+    }
+]
+
+// Gets all transfers for users....
+GET Transfer
+// Adding a transfer
+POST Transfer
+// get specific transfer
+Maybe GET transfer/{id}
