@@ -1,7 +1,8 @@
+const baseURL = "https://tenmoserverdemo.azurewebsites.net";
 function login(userData)
 {
 
-    fetch('https://localhost:44315/login', {
+    fetch(baseURL + '/login', {
         method: 'POST',
         body: JSON.stringify(userData),
         headers: {
@@ -26,7 +27,7 @@ function login(userData)
 function register(userData)
 {
 
-    fetch('https://localhost:44315/login/register', {
+    fetch(baseURL + '/login/register', {
         method: 'POST',
         body: JSON.stringify(userData),
         headers: {
@@ -47,7 +48,7 @@ function register(userData)
 
 function users()
 {
-    fetch('https://localhost:44315/api/account/users', {
+    fetch(baseURL + '/api/account/users', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -69,7 +70,7 @@ function users()
 
 function transfer(transferObject)
 {
-    fetch('https://localhost:44315/api/transfer', {
+    fetch(baseURL + '/api/transfer', {
         method: 'POST',
         body: JSON.stringify(transferObject),
         headers: {
@@ -90,7 +91,7 @@ function transfer(transferObject)
 
 function getBalance(shouldShow = false)
 {
-    fetch('https://localhost:44315/api/account', {
+    fetch(baseURL + '/api/account', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -113,7 +114,7 @@ function getBalance(shouldShow = false)
 
 function getTransfers()
 {
-    fetch('https://localhost:44315/api/transfer', {
+    fetch(baseURL + '/api/transfer', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

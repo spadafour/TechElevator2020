@@ -28,7 +28,8 @@ namespace TenmoServer
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            string connectionString = Configuration.GetConnectionString("Project");
+            //string connectionString = Configuration.GetConnectionString("Project");
+            string connectionString = Configuration.GetConnectionString("Azure");
 
             // configure jwt authentication
             var key = Encoding.ASCII.GetBytes(Configuration["JwtSecret"]);
