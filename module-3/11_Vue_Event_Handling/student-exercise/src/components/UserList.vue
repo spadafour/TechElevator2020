@@ -15,7 +15,7 @@
       <tbody>
         <tr>
           <td>
-            <input type="checkbox" id="selectAll" v-model="allChecked" v-on:click="selectOrDeselectAllUsers"/>
+            <input type="checkbox" id="selectAll" v-bind:checked="allChecked" v-on:change="selectOrDeselectAllUsers"/>
           </td>
           <td>
             <input type="text" id="firstNameFilter" v-model="filter.firstName" />
@@ -59,9 +59,9 @@
     </table>
 
     <div class="all-actions">
-      <button v-bind:disabled="actionButtonDisabled" v-on:click="enableUsers">Enable Users</button>
-      <button v-bind:disabled="actionButtonDisabled" v-on:click="disableUsers">Disable Users</button>
-      <button v-bind:disabled="actionButtonDisabled" v-on:click="deleteUsers">Delete Users</button>
+      <button v-bind:disabled="actionButtonDisabled" v-on:click="enableSelectedUsers">Enable Users</button>
+      <button v-bind:disabled="actionButtonDisabled" v-on:click="disableSelectedUsers">Disable Users</button>
+      <button v-bind:disabled="actionButtonDisabled" v-on:click="deleteSelectedUsers">Delete Users</button>
     </div>
 
     <button v-on:click.prevent="showForm = !showform">Add New User</button>
@@ -197,7 +197,7 @@ export default {
         this.selectedUserIDs = [];
       }
     },
-    enableUsers() {
+    enableSelectedUsers() {
       this.selectedUserIDs.forEach((selectedId) => {
         this.users.forEach((user) => {
           if (user.id == selectedId) {
@@ -207,7 +207,7 @@ export default {
       })
       this.selectedUserIDs = [];
     },
-    disableUsers() {
+    disableSelectedUsers() {
       this.selectedUserIDs.forEach((selectedId) => {
         this.users.forEach((user) => {
           if (user.id == selectedId) {
@@ -217,7 +217,7 @@ export default {
       })
       this.selectedUserIDs = [];
     },
-    deleteUsers() {
+    deleteSelectedUsers() {
       this.selectedUserIDs.forEach((selectedId) => {
         this.users = this.users.filter((user) => {
           if (user.id != selectedId) {
