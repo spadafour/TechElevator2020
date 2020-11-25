@@ -15,7 +15,7 @@
       <tbody>
         <tr>
           <td>
-            <input type="checkbox" id="selectAll" />
+            <input type="checkbox" id="selectAll" v-model="allChecked" v-on:click="selectOrDeselectAllUsers"/>
           </td>
           <td>
             <input type="text" id="firstNameFilter" v-model="filter.firstName" />
@@ -44,7 +44,7 @@
           v-bind:class="{ disabled: user.status === 'Disabled' }"
         >
           <td>
-            <input type="checkbox" v-bind:id="user.id" v-bind:value="user.id" v-on:click="addOrRemoveSelectedUserID(user.id)"/>
+            <input type="checkbox" v-bind:id="user.id" v-bind:value="user.id" v-model="selectedUserIDs" v-on:click="addOrRemoveSelectedUserID(user.id)"/>
           </td>
           <td>{{ user.firstName }}</td>
           <td>{{ user.lastName }}</td>
@@ -59,9 +59,9 @@
     </table>
 
     <div class="all-actions">
-      <button v-bind:disabled="actionButtonDisabled">Enable Users</button>
-      <button v-bind:disabled="actionButtonDisabled">Disable Users</button>
-      <button v-bind:disabled="actionButtonDisabled">Delete Users</button>
+      <button v-bind:disabled="actionButtonDisabled" v-on:click="enableUsers">Enable Users</button>
+      <button v-bind:disabled="actionButtonDisabled" v-on:click="disableUsers">Disable Users</button>
+      <button v-bind:disabled="actionButtonDisabled" v-on:click="deleteUsers">Delete Users</button>
     </div>
 
     <button v-on:click.prevent="showForm = !showform">Add New User</button>
@@ -159,7 +159,7 @@ export default {
         }
       ],
       showForm: false,
-      selectedUsersIDs: []
+      selectedUserIDs: []
     };
   },
   methods: {
@@ -174,16 +174,58 @@ export default {
       });
     },
     addOrRemoveSelectedUserID(id) {
-      if (!this.selectedUsersIDs.includes(id)) {
-        this.selectedUsersIDs.push(id);
+      if (!this.selectedUserIDs.includes(id)) {
+        this.selectedUserIDs.push(id);
       }
       else {
-        this.selectedUsersIDs = this.selectedUsersIDs.filter((selectedId) => {
+        this.selectedUserIDs = this.selectedUserIDs.filter((selectedId) => {
           if (selectedId != id) {
             return selectedId;
           }
         })
       }
+    },
+    selectOrDeselectAllUsers() {
+      if(this.selectedUserIDs.length != this.users.length) {
+        this.users.forEach((user) => {
+          if(!this.selectedUserIDs.includes(user.id)) {
+            this.selectedUserIDs.push(user.id);
+          }
+        })
+      }
+      else {
+        this.selectedUserIDs = [];
+      }
+    },
+    enableUsers() {
+      this.selectedUserIDs.forEach((selectedId) => {
+        this.users.forEach((user) => {
+          if (user.id == selectedId) {
+            user.status = 'Active';
+          }
+        })
+      })
+      this.selectedUserIDs = [];
+    },
+    disableUsers() {
+      this.selectedUserIDs.forEach((selectedId) => {
+        this.users.forEach((user) => {
+          if (user.id == selectedId) {
+            user.status = 'Disabled';
+          }
+        })
+      })
+      this.selectedUserIDs = [];
+    },
+    deleteUsers() {
+      this.selectedUserIDs.forEach((selectedId) => {
+        this.users = this.users.filter((user) => {
+          if (user.id != selectedId) {
+            return user;
+          }
+        })
+      })
+      this.selectedUserIDs = [];
     }
   },
   computed: {
@@ -225,14 +267,22 @@ export default {
       return filteredUsers;
     },
     actionButtonDisabled() {
-      if (this.selectedUsersIDs.length > 0) {
+      if (this.selectedUserIDs.length > 0) {
         return false;
       }
       else {
         return true;
       }
+    },
+    allChecked() {
+      if (this.selectedUserIDs.length == this.users.length) {
+        return true;
+      }
+      else {
+        return false;
+      }
     }
-  }
+  },
 };
 </script>
 
