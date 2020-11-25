@@ -1,26 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <product-review v-bind:name="productName"></product-review>
+    <user-list></user-list>
   </div>
 </template>
 
 <script>
-import ProductReview from "./components/ProductReview.vue";
+import UserList from "./components/UserList.vue";
 
 export default {
   name: "app",
   components: {
-    ProductReview
-  },
-  data(){
-    return {
-      productName: 'Rum Parties for Dummies'
-    }
+    UserList
   }
 };
 </script>
 
+<!-- REMOVE
 <style>
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -28,7 +23,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  max-width: 800px;
-  margin: 60px auto 0 auto;
+  margin-top: 60px;
 }
 </style>
+-->
