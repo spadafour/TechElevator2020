@@ -19,7 +19,7 @@ export default {
   },
 
   deleteMessage(id) {
-    return http.delete(`messages/${id}`, id);
+    return http.delete(`messages/${id}`);
   }
 
 }
